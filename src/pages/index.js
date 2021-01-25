@@ -1,16 +1,12 @@
-import React from 'react'
-import { Link, graphql } from 'gatsby'
-import Masonry from 'react-masonry-component'
-import Img from 'gatsby-image'
+import React from "react"
+import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
+import FirstSection from "../components/FirstSection/FirstSection"
 
 const IndexPage = () => (
   <Layout>
+    <FirstSection />
   </Layout>
 )
 
 export default IndexPage
-
-export const query = graphql`
-
-`

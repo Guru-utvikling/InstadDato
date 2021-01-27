@@ -8,12 +8,14 @@ import { HelmetDatoCms } from "gatsby-source-datocms"
 import Header from "../components/Header/Header"
 import Fade from "@material-ui/core/Fade"
 import '../styles/index.sass'
+import Footer from "./Footer/Footer"
 
 const Layout = ({ children }) => {
   return (
     <>
       <Header />
-      <main style={{marginTop:"125px"}}>{children}</main>
+      <main className="main_container">{children}</main>
+      <Footer />
     </>
   )
 }

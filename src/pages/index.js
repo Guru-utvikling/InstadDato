@@ -8,11 +8,11 @@ import NewsletterSection from "../components/NewsletterSection/NewsletterSection
 import BoxesSection from "../components/BoxesSection/BoxesSection"
 const IndexPage = ({ data }) => (
   <Layout>
-    <FirstSection data={data.allDatoCmsAsset}/>
+    <FirstSection data={data.allDatoCmsAsset} />
     <SecondSection />
     <ThirdSection />
     <NewsletterSection />
-    <BoxesSection boxData ={data.allDatoCmsServiceBox}/>
+    <BoxesSection boxData={data.allDatoCmsServiceBox} />
   </Layout>
 )
 
@@ -21,22 +21,22 @@ export default IndexPage
 export const query = graphql`
   query queryIndexPage {
     allDatoCmsServiceBox {
-    edges {
-      node {
-        id
-        shortDescription
-        title
-        icon {
-          url
+      edges {
+        node {
+          id
+          shortDescription
+          title
+          icon {
+            url
+          }
         }
       }
     }
-  }
-    allDatoCmsAsset {
+    allDatoCmsAsset(filter: { filename: { eq: "first-section-bg.png" } }) {
       edges {
         node {
-          fluid{
-            ...GatsbyDatoCmsFluid_tracedSVG
+          fluid {
+            src
           }
         }
       }

@@ -18,6 +18,7 @@ import InboxIcon from "@material-ui/icons/MoveToInbox"
 import MailIcon from "@material-ui/icons/Mail"
 import Button from "@material-ui/core/Button"
 import Grid from "@material-ui/core/Grid"
+import Menu from '../Menu/Menu'
 
 import { Link } from "gatsby"
 
@@ -121,7 +122,7 @@ export default function PersistentDrawerLeft() {
         })}
       >
         <Toolbar className={classes.toolbar}>
-          <Grid container fluid>
+          <Grid  className='appBar__container' container fluid>
             <Grid item lg={10} xs={4} >
               <Link to='/'>
                 <div className='header__logo--wrapper'>
@@ -132,7 +133,7 @@ export default function PersistentDrawerLeft() {
                 </div>
               </Link>
             </Grid>
-            <Grid  style={{display:'flex', justifyContent:"flex-end"}} lg={2} xs={8} item>
+            <Grid  style={{display:'flex', justifyContent:"flex-end"}} lg={2} xs={4} item>
               <Button disableRipple >Login</Button>
               <IconButton
                 color='inherit'
@@ -167,16 +168,7 @@ export default function PersistentDrawerLeft() {
         </div>
         <Divider />
         <List>
-          {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-            <Link>
-              <ListItem button key={text}>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItem>
-            </Link>
-          ))}
+          <Menu/>
         </List>
       </Drawer>
     </div>

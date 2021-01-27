@@ -1,16 +1,13 @@
 .secondSection__container
   margin: 5rem 0rem
+  padding: 5rem
 .MuiButton-label
   justify-content: start !important
 
 .secondSection__content__container
-  padding: 2rem
+  padding: 0rem 2rem
   display: flex
   flex-direction: column
-  &__bg
-    background-image: url(https://www.datocms-assets.com/41475/1611655049-tool-icon-2.svg)
-    background-repeat: no-repeat
-    background-position: center right
 .secondSection__image_left--wrapper
   display: flex
   justify-content: center
@@ -30,14 +27,15 @@
   .secondSection__container
     margin-top: 0rem
 @media screen and (max-width: 899px)
+  .secondSection__image_wrapper
+    align-items: center
   .MuiGrid-container
     flex-direction: column-reverse
-
   .secondSection__container
     margin-top: 0rem
-  .secondSection__image_left--wrapper,.secondSection__image_right--wrapper
-    display: flex
-    justify-content: center
-    align-items: center
     padding: 0
-    margin: 0
+  .secondSection__content__container
+    padding: 3rem 2rem
+  .secondSection__image_right--wrapper,.secondSection__image_left--wrapper
+    margin-bottom: 0 !important
+    margin-left: 0rem !important

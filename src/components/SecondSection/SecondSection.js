@@ -12,15 +12,15 @@ const SecondSection = () => {
         item
         lg={6}
       >
-        <Grid className="secondSection__image_left--wrapper" xs={12} lg={6} item>
+        <Grid className="secondSection__image_left--wrapper" xs={10} lg={6} item>
           <img src='https://www.datocms-assets.com/41475/1611652037-second-section-bg-1.jpg' />
         </Grid>
-        <Grid className="secondSection__image_right--wrapper"  xs={12} lg={6} item>
+        <Grid className="secondSection__image_right--wrapper"  xs={10} lg={6} item>
           <img src='https://www.datocms-assets.com/41475/1611652243-pexels-matthew-t-rader-5050860.jpg' />
         </Grid>
       </Grid>
       <Grid
-        className='secondSection__content__container__bg'
+        className='secondSection__content__container'
         justify='center'
         lg={6}
         item

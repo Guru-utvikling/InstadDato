@@ -9,19 +9,18 @@ const FirstSection = (props) => {
       query {
         datoCmsAsset(filename: {eq: "first-section-bg.png"}) {
           fluid {
-            ...GatsbyDatoCmsFluid_tracedSVG
+           src
           }
         }
 }
     `
   )
-  const imageData = data.datoCmsAsset.fluid
-  console.log(imageData.tracedSVG)
+  const imageData = data.datoCmsAsset.fluid.src
   return (
     <div
       className='firstSection__container'
       style={{
-        background: `${imageData.tracedSVG}`,
+        background: `url(${imageData})`,
       }}
     >
       <div className='firstSection__content--wrapper'>
@@ -33,7 +32,7 @@ const FirstSection = (props) => {
           commercial and private projects.
         </p>
         <div className='CTA__button--wrapper'>
-          <Button disableRipple >
+          <Button disableRipple>
             <Link
               style={{ backgroundColor: "#feda01" }}
               className='CTA__button'

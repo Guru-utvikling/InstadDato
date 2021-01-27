@@ -20,7 +20,7 @@ const SecondSection = () => {
         </Grid>
       </Grid>
       <Grid
-        className='secondSection__content__container'
+        className='secondSection__content__container__bg'
         justify='center'
         lg={6}
         item
@@ -37,7 +37,7 @@ const SecondSection = () => {
           våre medarbeidere innehar høy kompetanse. Det viktigste for oss er
           våre medarbeidere.
         </p>
-        <Button>
+        <Button disableRipple >
           <Link style={{ textAlign: 'start',backgroundColor: "#feda01" }} className='CTA__button'>
             Register your CV
           </Link>

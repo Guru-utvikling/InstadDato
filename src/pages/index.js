@@ -5,13 +5,41 @@ import FirstSection from "../components/FirstSection/FirstSection"
 import SecondSection from "../components/SecondSection/SecondSection"
 import ThirdSection from "../components/ThirdSection/ThirdSection"
 import NewsletterSection from "../components/NewsletterSection/NewsletterSection"
-const IndexPage = () => (
+import BoxesSection from "../components/BoxesSection/BoxesSection"
+const IndexPage = ({ data }) => (
   <Layout>
-    <FirstSection />
-    <SecondSection/>
-    <ThirdSection/>
+    <FirstSection data={data.allDatoCmsAsset}/>
+    <SecondSection />
+    <ThirdSection />
     <NewsletterSection />
+    <BoxesSection boxData ={data.allDatoCmsServiceBox}/>
   </Layout>
 )
 
 export default IndexPage
+
+export const query = graphql`
+  query queryIndexPage {
+    allDatoCmsServiceBox {
+    edges {
+      node {
+        id
+        shortDescription
+        title
+        icon {
+          url
+        }
+      }
+    }
+  }
+    allDatoCmsAsset {
+      edges {
+        node {
+          fluid{
+            ...GatsbyDatoCmsFluid_tracedSVG
+          }
+        }
+      }
+    }
+  }
+`

@@ -133,7 +133,7 @@ export default function PersistentDrawerLeft() {
               </Link>
             </Grid>
             <Grid  style={{display:'flex', justifyContent:"flex-end"}} lg={2} xs={8} item>
-              <Button>Login</Button>
+              <Button disableRipple >Login</Button>
               <IconButton
                 color='inherit'
                 aria-label='open drawer'

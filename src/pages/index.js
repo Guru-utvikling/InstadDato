@@ -32,7 +32,7 @@ export default IndexPage
 
 export const query = graphql`
   query queryIndexPage {
-    allDatoCmsNyheter(limit: 4) {
+    allDatoCmsNyheter(limit: 3) {
       edges {
         node {
           nyheterTitle

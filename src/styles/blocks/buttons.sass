@@ -6,6 +6,10 @@
   //margin-top: 2rem
   font-size: 1rem
   text-transform: none
+  &__registerCV
+    background-color: $main
+    width: 20%
+    text-align: center
 .CTA__button--wrapper
   display: flex
   gap: 3rem
@@ -18,6 +22,18 @@
     transition: none !important
 .MuiButton-label
   justify-content: start !important
+.see_all__btn
+  background-color: $main
+  padding: 1rem 2rem
+  color: #000000
+  border-radius: 5px
+  text-decoration: none
+  a
+    color: #fff
+@media screen and (min-width: 899px) and (max-width: 1280px)
+  .CTA__button
+    &__registerCV
+      width: 100%
 @media screen and (max-width: 899px)
   .CTA__button--wrapper
     justify-content: center
@@ -25,5 +41,7 @@
     color: #000
     border-radius: 5px
     margin-top: 2rem
+    &__registerCV
+      width: 100%
   .MuiButton-label
     justify-content: center !important

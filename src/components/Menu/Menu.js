@@ -15,7 +15,7 @@ const Menu = () => {
   return (
     <List>
       {menuItems.map((item) => (
-        <Link>
+        <Link style={{color:"inherit",textDecoration:'none'}} to={item.url}>
           <ListItem button key={item.url}>
             <ListItemText  primary={item.text} />
           </ListItem>

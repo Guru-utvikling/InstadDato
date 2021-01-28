@@ -1,0 +1,42 @@
+.archive
+  display: flex
+  gap: 1rem
+  padding: 5rem
+.article__container
+  width: 25%
+.article__title
+  margin-top: 1.2rem
+  font-size: 1.4rem
+  text-decoration: none
+  color: #000
+  font-weight: 900
+  a
+    text-decoration: none
+    color: #000
+
+.article__info
+  margin-top: 1rem
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  a
+    color: $main
+    font-weight: 900
+    text-decoration: underline
+  p
+    color: #9D9D9D
+    font-weight: 900
+.article__image
+  display: flex
+  background-size: cover !important
+  background-position: center center !important
+  height: 255px
+/*dokoncz articles background*/
+
+@media screen and (max-width: 899px)
+  .archive
+    flex-direction: column
+    padding: 2rem
+  .article__container
+    width: 100%
+    margin-bottom: 2rem

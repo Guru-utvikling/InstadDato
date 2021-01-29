@@ -1,0 +1,31 @@
+.om-oss-container
+  display: flex
+  margin: 15rem 5rem
+  flex-direction: row
+  &__content
+    padding: 5rem
+    display: flex
+    justify-content: center
+    flex-direction: column
+    &--para
+      font-size: 16px
+      line-height: 2rem
+  &__images
+    display: flex
+    justify-content: center
+    flex-direction: row
+    gap: 1rem
+    &--img
+      width: 45%
+@media screen and (max-width: 1100px)
+  .om-oss-container
+    flex-direction: column
+    margin: 5rem 2rem
+    &__content
+      text-align: center
+      padding: 1.4rem
+    &__images
+      flex-direction: column
+      align-items: center
+      &--img
+        width: 80%

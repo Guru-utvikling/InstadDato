@@ -26,10 +26,10 @@ const SecondSection = () => {
         item
       >
         <h6 className='smallSectionSubTitle'>VARE TJENESTER</h6>
-        <h2 className='bigSectionTitle'>
+        <h2 style={{color:'#fff'}} className='bigSectionTitle'>
           Bygg, Anlegg, Installasjon og Industri
         </h2>
-        <p className='paraSection'>
+        <p style={{color:'#fff'}} className='paraSection'>
           Vi kjenner markedet og mulighetene innen fagene. Vi samarbeider med
           mange både små og store kunder, både lokalt og nasjonalt. Vi har et
           bredt spekter av kandidater og ledige stillinger innenfor de
@@ -37,11 +37,6 @@ const SecondSection = () => {
           våre medarbeidere innehar høy kompetanse. Det viktigste for oss er
           våre medarbeidere.
         </p>
-        <Button disableRipple >
-          <Link style={{ textAlign: 'start',backgroundColor: "#feda01" }} className='CTA__button'>
-            Register your CV
-          </Link>
-        </Button>
       </Grid>
     </Grid>
   )

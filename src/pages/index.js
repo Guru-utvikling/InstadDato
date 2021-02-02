@@ -11,13 +11,15 @@ import RegisterCvCTA from "../components/RegisterCv_CTA/RegisterCvCTA"
 
 const IndexPage = ({ data }) => (
   <Layout>
-    <FirstSection data={data.allDatoCmsAsset} />
+    <FirstSection backgroundImage={data.allDatoCmsAsset} />
     <SecondSection />
     <ThirdSection />
     <NewsletterSection />
     <BoxesSection boxData={data.allDatoCmsServiceBox} />
     <RegisterCvCTA />
-    <h2 className='bigSectionTitle bigSectionTitle__left'>Se de siste innleggene</h2>
+    <h2 className='bigSectionTitle bigSectionTitle__left'>
+      Se de siste innleggene
+    </h2>
     <ArticlePreview post={data.allDatoCmsNyheter} />
 
     <div style={{ textAlign: "center", marginBottom: "3rem" }}>
@@ -44,8 +46,8 @@ export const query = graphql`
             }
           }
           meta {
-          firstPublishedAt(fromNow: true)
-        }
+            firstPublishedAt(fromNow: true)
+          }
         }
       }
     }
@@ -61,13 +63,10 @@ export const query = graphql`
         }
       }
     }
-    allDatoCmsAsset(filter: { filename: { eq: "first-section-bg.png" } }) {
-      edges {
-        node {
-          fluid {
-            src
-          }
-        }
+    datoCmsAsset(filename: { eq: "first-section-bg.png" }) {
+      id
+      fluid {
+        src
       }
     }
   }

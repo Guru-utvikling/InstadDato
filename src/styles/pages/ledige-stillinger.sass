@@ -47,7 +47,26 @@
     font-size: 1.5rem
 .container__ledige-list
   width: 100%
+.card_container
+  display: flex
+  margin: 2rem 5rem
+  border-radius: 10px !important
+  padding: 2rem
+.card_logo
+  width: 40% !important
+  background-position: center center
+  background-repeat: no-repeat
+  background-size: contain
 @media screen and (max-width: 899px)
+  .card_container
+    flex-direction: column
+    margin: 1rem
+    padding: 2rem
+    text-align: center
+  .card_logo
+    height: 105px
+    width: 100% !important
+
   .ledige_stillinger_main_container
     padding: 2rem 0
   .makeStyles-cover-5

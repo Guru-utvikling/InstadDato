@@ -18,7 +18,7 @@ const NewsletterSection = () => {
       >
         <img className="newsletterSection__image" src='https://www.datocms-assets.com/41475/1611655430-conversation-icon.svg' />
         <div  className='newsletterSection__content'>
-          <h2 style={{color:"#fff"}} className="smallSectionTitle">Har du noen spørsmål?</h2>
+          <h2 style={{color:"#fff",fontWeight:'900',fontSize:'18px'}} >Har du noen spørsmål?</h2>
           <p className="paraSection">Send en henvendelse, så tar vi kontakt med deg.</p>
         </div>
       </Grid>
@@ -50,7 +50,7 @@ const NewsletterSection = () => {
 
           <label>
             <p style={{textAlign:'center'}}>
-              <a style={{color:"#fff", fontSize:'18px',textDecoration:'none',fontWeight:'900'}} href='tel:+4740021570'>Telefon: +47 400 21 570</a>
+              <a style={{color:"#000", fontSize:'18px',textDecoration:'none'}} href='tel:+4740021570'>Telefon: +47 400 21 570</a>
             </p>
           </label>
         </form>

@@ -3,24 +3,13 @@ import { makeStyles, useTheme } from "@material-ui/core/styles"
 import { Link } from "gatsby"
 import Button from "@material-ui/core/Button"
 import { graphql, useStaticQuery } from "gatsby"
+import Image from 'gatsby'
 const FirstSection = (props) => {
-  const data = useStaticQuery(
-    graphql`
-      query {
-        datoCmsAsset(filename: {eq: "first-section-bg.png"}) {
-          fluid {
-           src
-          }
-        }
-}
-    `
-  )
-  const imageData = data.datoCmsAsset.fluid.src
   return (
     <div
       className='firstSection__container'
       style={{
-        background: `url(${imageData})`,
+        background: `url(https://www.datocms-assets.com/41475/1611583917-first-section-bg.png?auto=format)`,
       }}
     >
       <div className='firstSection__content--wrapper'>
@@ -40,7 +29,7 @@ const FirstSection = (props) => {
               See all jobs
             </Link>
           </Button>
-          <Button disableRipple >
+          <Button disableRipple>
             <Link style={{ backgroundColor: "#fff" }} className='CTA__button'>
               Om oss
             </Link>
@@ -52,3 +41,10 @@ const FirstSection = (props) => {
 }
 
 export default FirstSection
+/*      query {
+        datoCmsAsset(filename: { eq: "first-section-bg.png" }) {
+          fluid {
+            ...GatsbyImageSharpFluid_tracedSVG
+          }
+        }
+      }*/

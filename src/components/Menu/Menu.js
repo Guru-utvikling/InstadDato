@@ -10,7 +10,7 @@ const Menu = () => {
     { text: "Ledige stillinger", url: "/ledige-stillinger" },
     { text: "Events", url: "/events" },
     { text: "Blogg", url: "/blogg" },
-    { text: "Kontakt oss", url: "kontakt-oss" },
+    { text: "Kontakt oss", url: "/kontakt-oss" },
   ]
   return (
     <List>

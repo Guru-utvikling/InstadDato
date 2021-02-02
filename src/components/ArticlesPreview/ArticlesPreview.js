@@ -30,8 +30,8 @@ const ArticlePreview = (props) => {
                         <p className="article__short" >{nyheter.nyheterExcerpt}</p>
                       </div>
                       <div className="article__info">
-                          <p>{nyheter.meta.firstPublishedAt}</p>
-                          <Link to={`/blogg/${nyheter.nyheterSlug}`}>Les mer</Link>
+                          <p style={{color:'#000'}}>{nyheter.meta.firstPublishedAt}</p>
+                          <Link style={{color:'#000'}} to={`/blogg/${nyheter.nyheterSlug}`}>Les mer</Link>
                       </div>
                     </figcaption>
                   </figure>

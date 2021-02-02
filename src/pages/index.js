@@ -17,15 +17,17 @@ const IndexPage = ({ data }) => (
     <NewsletterSection />
     <BoxesSection boxData={data.allDatoCmsServiceBox} />
     <RegisterCvCTA />
-    <h2 className='bigSectionTitle bigSectionTitle__left'>
-      Se de siste innleggene
-    </h2>
-    <ArticlePreview post={data.allDatoCmsNyheter} />
+    <div style={{ backgroundColor: " #eeeeee" }}>
+      <h2 className='bigSectionTitle bigSectionTitle__left'>
+        Se de siste innleggene
+      </h2>
+      <ArticlePreview post={data.allDatoCmsNyheter} />
 
-    <div style={{ textAlign: "center", marginBottom: "3rem" }}>
-      <Link className='see_all__btn' to='/blogg'>
-        Se alle innlegg
-      </Link>
+      <div style={{ textAlign: "center", marginBottom: "3rem" }}>
+        <Link className='see_all__btn' to='/blogg'>
+          Se alle innlegg
+        </Link>
+      </div>
     </div>
   </Layout>
 )

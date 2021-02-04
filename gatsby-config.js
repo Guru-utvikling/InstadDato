@@ -17,7 +17,7 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-background-image-es5',
+      resolve: 'gatsby-background-image',
       options: {
         // add your own characters to escape, replacing the default ':/'
         specialChars: '/:',

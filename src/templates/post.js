@@ -10,7 +10,7 @@ export default ({ data }) => (
       <HelmetDatoCms seo={data.datoCmsNyheter.seoMetaTags} />
       <div className="sheet__inner">
         <h1 className="sheet__title">{data.datoCmsNyheter.nyheterTitle}</h1>
-        <img src={data.datoCmsNyheter.nyheterCoverimage.fluid.src}/>
+        <Img fluid={data.datoCmsNyheter.nyheterCoverimage.fluid} />
         <p className="sheet__lead">{data.datoCmsNyheter.nyheterExcerpt}</p>
         <div
           className="sheet__body"
@@ -19,7 +19,7 @@ export default ({ data }) => (
           }}
         />
         <div className="sheet__gallery">
-          <Img fluid={data.datoCmsNyheter.nyheterCoverimage.fluid} />
+
         </div>
       </div>
     </article>
@@ -38,7 +38,7 @@ export const query = graphql`
         }
         nyheterCoverimage {
           fluid {
-            src
+            ...GatsbyDatoCmsFluid
           }
         }
     }

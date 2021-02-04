@@ -21,6 +21,7 @@ import Grid from "@material-ui/core/Grid"
 import Menu from '../Menu/Menu'
 
 import { Link } from "gatsby"
+import { Hidden } from "@material-ui/core"
 
 const drawerWidth = 240
 
@@ -30,9 +31,8 @@ const useStyles = makeStyles((theme) => ({
   },
   appBar: {
     height:'auto',
-    padding: "1.5rem",
     justifyContent: "space-between",
-    backgroundColor: "#FEDB00",
+    backgroundColor: "inherit",
     transition: theme.transitions.create(["margin", "width"], {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
@@ -125,18 +125,21 @@ export default function PersistentDrawerLeft() {
           <Grid  className='appBar__container' container fluid>
             <Grid item lg={10} xs={4} >
               <Link to='/'>
+                <Hidden mdUp>
                 <div className='header__logo--wrapper'>
                   <img
                     className='header__logo'
                     src='https://www.datocms-assets.com/41475/1611574344-instad-logo.png'
                   />
                 </div>
+                </Hidden>
+
               </Link>
             </Grid>
             <Grid  style={{display:'flex', justifyContent:"flex-end"}} lg={2} xs={4} item>
-              <Button disableRipple >Login</Button>
+              <Button style={{color:"#fff"}} disableRipple >Login</Button>
               <IconButton
-                color='inherit'
+                style={{color:"#fff"}}
                 aria-label='open drawer'
                 onClick={handleDrawerOpen}
                 edge='start'

@@ -1,12 +1,32 @@
+.firstSection__main__container
+  display: flex
+  flex-direction: row
+  height: 100vh
+  width: 100%
+.firstSection__sidebar
+  background-color: $main
+  width: 20%
+  display: flex
+  flex-direction: column
+  padding: 5rem
+  justify-content: space-between
+.firstSection__sidebar--list
+  text-align: end
+  line-height: 2rem
+  font-size: 16px
+  a
+    color: inherit
+    text-decoration: none
 .firstSection__container
-  height: auto
+  height: 100vh
   padding: 5rem
   margin: auto
   display: flex
   align-items: center
-  max-width: 100%
+  width: 80%
+  background-size: cover !important
 .firstSection__content--wrapper
-  width: 50%
+  width: 80%
 .firstSection__title
   color: #fff
   font-weight: 900
@@ -17,16 +37,34 @@
   line-height: 3rem
 .CTA__button--wrapper
   height: auto
-@media screen and (min-width: 899px) and (max-width: 1280px)
+.MuiPaper-elevation4
+  box-shadow: none !important
+@media screen and (min-width: 899px) and (max-width: 960px)
+  .firstSection__main__container
+    height: auto
+    max-width: 100% !important
+  .firstSection__container
+    width: 100%
+    height: auto
+
+  .firstSection__content--wrapper
+    width: 90%
   .appBar__container
     flex-direction: inherit !important
     justify-content: space-between
 @media screen and (max-width: 899px)
   .firstSection__content--wrapper
     width: 100%
+    padding: 2rem
+    display: flex
+    flex-direction: column
+    justify-content: center
+    height: 100vh
   .firstSection__container
     height: auto
-    padding: 5rem 2rem
+    width: 100%
+    max-width: 100%
+    padding: 0
   .firstSection__title
     font-size: 3rem
     text-align: center
@@ -36,6 +74,8 @@
     line-height: unset
   .CTA__button--wrapper
     text-align: center
+    display: flex
+    flex-direction: column
   .appBar__container
     flex-direction: inherit !important
     justify-content: space-between

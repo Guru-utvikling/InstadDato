@@ -6,15 +6,18 @@ import { Link } from "gatsby"
 import { StaticQuery, graphql } from "gatsby"
 import { HelmetDatoCms } from "gatsby-source-datocms"
 import Header from "../components/Header/Header"
-import Fade from "@material-ui/core/Fade"
-import '../styles/index.sass'
+
+import "../styles/index.sass"
 import Footer from "./Footer/Footer"
+import { Fade } from "@material-ui/core"
 
 const Layout = ({ children }) => {
   return (
     <>
       <Header />
-      <main className="main_container">{children}</main>
+      <Fade in timeout={500} >
+        <main className='main_container'>{children}</main>
+      </Fade>
       <Footer />
     </>
   )

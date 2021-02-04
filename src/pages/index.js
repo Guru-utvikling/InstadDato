@@ -8,27 +8,26 @@ import NewsletterSection from "../components/NewsletterSection/NewsletterSection
 import BoxesSection from "../components/BoxesSection/BoxesSection"
 import ArticlePreview from "../components/ArticlesPreview/ArticlesPreview"
 import RegisterCvCTA from "../components/RegisterCv_CTA/RegisterCvCTA"
-
 const IndexPage = ({ data }) => (
   <Layout>
-    <FirstSection backgroundImage={data.allDatoCmsAsset} />
-    <SecondSection />
-    <ThirdSection />
-    <NewsletterSection />
-    <BoxesSection boxData={data.allDatoCmsServiceBox} />
-    <RegisterCvCTA />
-    <div style={{ backgroundColor: " #eeeeee" }}>
-      <h2 className='bigSectionTitle bigSectionTitle__left'>
-        Se de siste innleggene
-      </h2>
-      <ArticlePreview post={data.allDatoCmsNyheter} />
+      <FirstSection backgroundImage={data.allDatoCmsAsset} />
+      <SecondSection />
+      <ThirdSection />
+      <NewsletterSection />
+      <BoxesSection boxData={data.allDatoCmsServiceBox} />
+      <RegisterCvCTA />
+      <div style={{ backgroundColor: " #eeeeee" }}>
+        <h2 className='bigSectionTitle bigSectionTitle__left'>
+          Se de siste innleggene
+        </h2>
+        <ArticlePreview post={data.allDatoCmsNyheter} />
 
-      <div style={{ textAlign: "center", marginBottom: "3rem" }}>
-        <Link className='see_all__btn' to='/blogg'>
-          Se alle innlegg
-        </Link>
+        <div style={{ textAlign: "center", marginBottom: "3rem" }}>
+          <Link className='see_all__btn' to='/blogg'>
+            Se alle innlegg
+          </Link>
+        </div>
       </div>
-    </div>
   </Layout>
 )
 
@@ -44,7 +43,7 @@ export const query = graphql`
           nyheterExcerpt
           nyheterCoverimage {
             fluid(maxWidth: 500, imgixParams: { fm: "jpg", auto: "compress" }) {
-              src
+              ...GatsbyDatoCmsFluid
             }
           }
           meta {
@@ -65,10 +64,13 @@ export const query = graphql`
         }
       }
     }
-    datoCmsAsset(filename: { eq: "first-section-bg.png" }) {
-      id
-      fluid {
-        src
+    allDatoCmsAsset(filter: { filename: { eq: "first-section-bg.png" } }) {
+      edges {
+        node {
+          fluid {
+            ...GatsbyDatoCmsFluid
+          }
+        }
       }
     }
   }

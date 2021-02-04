@@ -15,7 +15,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header />
-      <Fade in timeout={500} >
+      <Fade in timeout={500}>
         <main className='main_container'>{children}</main>
       </Fade>
       <Footer />

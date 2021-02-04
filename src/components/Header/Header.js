@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import clsx from "clsx"
 import { makeStyles, useTheme } from "@material-ui/core/styles"
 import Drawer from "@material-ui/core/Drawer"
@@ -18,7 +18,7 @@ import InboxIcon from "@material-ui/icons/MoveToInbox"
 import MailIcon from "@material-ui/icons/Mail"
 import Button from "@material-ui/core/Button"
 import Grid from "@material-ui/core/Grid"
-import Menu from '../Menu/Menu'
+import Menu from "../Menu/Menu"
 
 import { Link } from "gatsby"
 import { Hidden } from "@material-ui/core"
@@ -28,9 +28,13 @@ const drawerWidth = 240
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
+    justifyContent:"flex-end",
+    alignItems:'flex-end',
+    backgroundColor:"#feda01"
+
   },
   appBar: {
-    height:'auto',
+    height: "auto",
     justifyContent: "space-between",
     backgroundColor: "inherit",
     transition: theme.transitions.create(["margin", "width"], {
@@ -89,7 +93,7 @@ const useStyles = makeStyles((theme) => ({
   },
   toolbar: {
     justifyContent: "space-between",
-    padding:0
+    padding: 0,
   },
 }))
 
@@ -97,20 +101,17 @@ export default function PersistentDrawerLeft() {
   const classes = useStyles()
   const theme = useTheme()
   const [open, setOpen] = React.useState(false)
-  const menuItems = [
-    {
-      text: "Item 1",
-      icon: "Icon",
-      url: "",
-    },
-  ]
+
+
   const handleDrawerOpen = () => {
     setOpen(true)
   }
-
   const handleDrawerClose = () => {
     setOpen(false)
   }
+
+
+
 
   return (
     <div className={classes.root}>
@@ -122,32 +123,44 @@ export default function PersistentDrawerLeft() {
         })}
       >
         <Toolbar className={classes.toolbar}>
-          <Grid  className='appBar__container' container fluid>
-            <Grid item lg={10} xs={4} >
+          <Grid className='appBar__container' container fluid>
+            <Grid item md lg={6} xs={4}>
               <Link to='/'>
-                <Hidden mdUp>
-                <div className='header__logo--wrapper'>
-                  <img
-                    className='header__logo'
-                    src='https://www.datocms-assets.com/41475/1611574344-instad-logo.png'
-                  />
-                </div>
-                </Hidden>
-
+                  <div className='header__logo--wrapper'>
+                    <img
+                      className='header__logo'
+                      src='https://www.datocms-assets.com/41475/1611574344-instad-logo.png'
+                    />
+                  </div>
               </Link>
             </Grid>
-            <Grid  style={{display:'flex', justifyContent:"flex-end"}} lg={2} xs={4} item>
-              <Button style={{color:"#fff"}} disableRipple >Login</Button>
-              <IconButton
-                style={{color:"#fff"}}
-                aria-label='open drawer'
-                onClick={handleDrawerOpen}
-                edge='start'
-                className={clsx(classes.menuButton, open && classes.hide)}
+            <Hidden smDown>
+              <Grid md lg={6} xs={4} item className="menu__container">
+                <Menu/>
+              </Grid>
+            </Hidden>
+
+            <Hidden mdUp>
+              <Grid
+                style={{ display: "flex", justifyContent: "flex-end" }}
+                lg={2}
+                xs={4}
+                item
               >
-                <MenuIcon />
-              </IconButton>
-            </Grid>
+                <Button style={{ color: "#000" }} disableRipple>
+                  Login
+                </Button>
+                <IconButton
+                  style={{ color: "#000" }}
+                  aria-label='open drawer'
+                  onClick={handleDrawerOpen}
+                  edge='start'
+                  className={clsx(classes.menuButton, open && classes.hide)}
+                >
+                  <MenuIcon />
+                </IconButton>
+              </Grid>
+            </Hidden>
           </Grid>
         </Toolbar>
       </AppBar>
@@ -171,7 +184,7 @@ export default function PersistentDrawerLeft() {
         </div>
         <Divider />
         <List>
-          <Menu/>
+          <Menu />
         </List>
       </Drawer>
     </div>

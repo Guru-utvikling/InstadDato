@@ -13,7 +13,7 @@ const Menu = () => {
     { text: "Kontakt oss", url: "/kontakt-oss" },
   ]
   return (
-    <List>
+    <List className="menu__list">
       {menuItems.map((item) => (
         <Link style={{color:"inherit",textDecoration:'none'}} to={item.url}>
           <ListItem button key={item.url}>

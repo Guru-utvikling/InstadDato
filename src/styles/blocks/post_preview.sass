@@ -4,6 +4,7 @@
   justify-content: center
   gap: 2rem
   padding: 5rem
+
 .article__container
   width: 100%
 .article__title
@@ -14,19 +15,21 @@
   font-weight: 900
   a
     text-decoration: none
-    color: #000
-
+    color: $main
+  p
+.article__short
+  color: #fff
 .article__info
   margin-top: 1rem
   display: flex
   flex-direction: row
   justify-content: space-between
   a
-    color: $main
+    color: $main !important
     font-weight: 900
     text-decoration: underline
   p
-    color: #9D9D9D
+    color: $main !important
     font-weight: 900
 .article__image
   display: flex

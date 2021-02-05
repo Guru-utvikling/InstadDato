@@ -16,7 +16,7 @@ const NewsletterSection = () => {
         lg={6}
         xs={12}
       >
-        <img className="newsletterSection__image" src='https://www.datocms-assets.com/41475/1611655430-conversation-icon.svg' />
+        <img className="newsletterSection__image" src='https://www.datocms-assets.com/41475/1612531516-conversation-icon.svg' />
         <div  className='newsletterSection__content'>
           <h2 style={{color:"#fff",fontWeight:'900',fontSize:'18px'}} >Har du noen spørsmål?</h2>
           <p style={{color:'#fff'}} className="paraSection">Send en henvendelse, så tar vi kontakt med deg.</p>

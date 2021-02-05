@@ -10,9 +10,10 @@ import LinkedInIcon from "@material-ui/icons/LinkedIn"
 import BackgroundImage from "gatsby-background-image"
 import Menu from "../Menu/Menu"
 const FirstSection = (props) => {
-  
+
+  let currentViewPort  = 0
   if( typeof window !==`undefined`){
-    const currentURL = window.location.pathname
+    currentViewPort  = window.innerWidth
   }
 
 
@@ -36,7 +37,7 @@ const FirstSection = (props) => {
         </div>
       </Hidden>
       <BackgroundImage fluid={props.backgroundImage.edges[0].node.fluid}>
-        <Menu color="white"/>
+        { currentViewPort >= 899 ? <Menu color="#fff"/> : ''}
         <div className='firstSection__container'>
           <Slide in direction='right' timeout={300}>
             <div className='firstSection__content--wrapper'>

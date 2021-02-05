@@ -13,7 +13,7 @@ const Menu = (props) => {
     { text: "Kontakt oss", url: "/kontakt-oss" },
   ]
   return (
-    <List style={{flexDirection:`${props.direction}`}} className="menu__list">
+    <List style={{ width:`${props.width}`,position:`${props.position}`, flexDirection:`${props.direction}`}} className="menu__list">
       {menuItems.map((item) => (
         <Link style={{flexDirection:`${props.direction}`, color:`${props.color}`,textDecoration:'none'}} to={item.url}>
           <ListItem button key={item.url}>

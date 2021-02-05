@@ -8,7 +8,14 @@ import Slide from "@material-ui/core/Slide"
 import Hidden from "@material-ui/core/Hidden"
 import LinkedInIcon from "@material-ui/icons/LinkedIn"
 import BackgroundImage from "gatsby-background-image"
+import Menu from "../Menu/Menu"
 const FirstSection = (props) => {
+  
+  if( typeof window !==`undefined`){
+    const currentURL = window.location.pathname
+  }
+
+
   return (
     <div className='firstSection__main__container'>
       <Hidden smDown>
@@ -29,6 +36,7 @@ const FirstSection = (props) => {
         </div>
       </Hidden>
       <BackgroundImage fluid={props.backgroundImage.edges[0].node.fluid}>
+        <Menu color="white"/>
         <div className='firstSection__container'>
           <Slide in direction='right' timeout={300}>
             <div className='firstSection__content--wrapper'>

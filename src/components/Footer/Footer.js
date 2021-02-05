@@ -16,16 +16,34 @@ const Footer = () => {
       </Grid>
       <Grid className='footer-item__wrapper' md lg={2} item>
         <h4 className='smallBoldTitle'>Meny</h4>
-        <Menu />
+        <Menu color='#000' direction='column' />
       </Grid>
       <Grid className='footer-item__wrapper' md lg={2} item>
         <h4 className='smallBoldTitle'>Kontakt oss</h4>
         <List>
           <ListItem>
-            <ListItemText><a style={{textDecoration:'none', color:'inherit'}} href="tel:+47 567 890 456">+47 567 890 456</a></ListItemText>
+            <ListItemText>
+              <a
+                style={{ textDecoration: "none", color: "inherit" }}
+                href='tel:+47 567 890 456'
+              >
+                +47 567 890 456
+              </a>
+            </ListItemText>
           </ListItem>
-          <ListItem><ListItemText><a style={{textDecoration:'none', color:'inherit'}} href="mailto:post@epost.no">post@epost.no</a></ListItemText></ListItem>
-          <ListItem><ListItemText>Halfdan Kjerulfsgate 4 5017 Bergen</ListItemText></ListItem>
+          <ListItem>
+            <ListItemText>
+              <a
+                style={{ textDecoration: "none", color: "inherit" }}
+                href='mailto:post@epost.no'
+              >
+                post@epost.no
+              </a>
+            </ListItemText>
+          </ListItem>
+          <ListItem>
+            <ListItemText>Halfdan Kjerulfsgate 4 5017 Bergen</ListItemText>
+          </ListItem>
         </List>
       </Grid>
       <Grid className='footer-item__wrapper' md lg={2} item>

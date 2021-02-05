@@ -136,7 +136,7 @@ export default function PersistentDrawerLeft() {
             </Grid>
             <Hidden smDown>
               <Grid md lg={6} xs={4} item className="menu__container">
-                <Menu/>
+                <Menu direction="row" color="#000"/>
               </Grid>
             </Hidden>
 
@@ -184,7 +184,7 @@ export default function PersistentDrawerLeft() {
         </div>
         <Divider />
         <List>
-          <Menu />
+          <Menu color="#000" direction="column" />
         </List>
       </Drawer>
     </div>

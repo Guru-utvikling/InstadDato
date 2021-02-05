@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import List from "@material-ui/core/List"
 import ListItemText from "@material-ui/core/ListItemText"
 import ListItem from "@material-ui/core/ListItem"
-const Menu = () => {
+const Menu = (props) => {
   const menuItems = [
     { text: "Om oss", url: "/om-oss" },
     { text: "Tjenester", url: "/tjenester" },
@@ -13,9 +13,9 @@ const Menu = () => {
     { text: "Kontakt oss", url: "/kontakt-oss" },
   ]
   return (
-    <List className="menu__list">
+    <List style={{flexDirection:`${props.direction}`}} className="menu__list">
       {menuItems.map((item) => (
-        <Link style={{color:"inherit",textDecoration:'none'}} to={item.url}>
+        <Link style={{flexDirection:`${props.direction}`, color:`${props.color}`,textDecoration:'none'}} to={item.url}>
           <ListItem button key={item.url}>
             <ListItemText  primary={item.text} />
           </ListItem>

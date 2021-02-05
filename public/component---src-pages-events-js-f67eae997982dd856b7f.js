@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[8],{UV5A:function(e,t,n){"use strict";n.r(t);var i=n("q1tI"),a=n.n(i),c=n("Bl7J");n("Wbzz");t.default=function(){return a.a.createElement(c.a,null,a.a.createElement("div",{style:{height:"100vh"}},a.a.createElement("h1",{className:"bigSectionTitle bigSectionTitle__centered"},"Sorry, nothing to see anything yet")))}}}]);
+//# sourceMappingURL=component---src-pages-events-js-f67eae997982dd856b7f.js.map

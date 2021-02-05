@@ -9,26 +9,38 @@ import Header from "../components/Header/Header"
 import "../styles/index.sass"
 import Footer from "./Footer/Footer"
 import { Fade } from "@material-ui/core"
-import Menu from '../components/Menu/Menu'
+import Menu from "../components/Menu/Menu"
 
 const Layout = ({ children }) => {
+  const [resize, setResize] = useState()
+
   let currentURL = ""
-  let currentViewPort  = 0
+  let currentViewPort = 0
+
+  useEffect(() => {
+    if (typeof window !== `undefined`) {
+      setResize(window.innerWidth)
+      window.addEventListener("resize", updateSize)
+    }
+  }, [])
+  const updateSize = () => {
+    if (typeof window !== `undefined`) {
+      setResize(window.innerWidth)
+    }
+  }
+
   if (typeof window !== `undefined`) {
     currentURL = window.location.pathname
     currentViewPort = window.innerWidth
   }
-  const renderMenu = () => {
 
-    if (currentURL === "/" && currentViewPort >= 899) {
-      return ''
-      
-    }
-    else if(currentURL === "/" && currentViewPort <= 899 || currentURL != '/' ) {
-        return <Header />
+  const renderMenu = () => {
+    if (currentURL === "/" && resize >= 899) {
+      return ""
+    } else if ((currentURL === "/" && resize <= 899) || currentURL != "/") {
+      return <Header />
     }
   }
-
   return (
     <>
       {renderMenu()}

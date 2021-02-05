@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState} from "react"
 import { makeStyles, useTheme } from "@material-ui/core/styles"
 import { Link } from "gatsby"
 import Button from "@material-ui/core/Button"
@@ -10,10 +10,22 @@ import LinkedInIcon from "@material-ui/icons/LinkedIn"
 import BackgroundImage from "gatsby-background-image"
 import Menu from "../Menu/Menu"
 const FirstSection = (props) => {
+ const [ resize, setResize] = useState()
 
-  let currentViewPort  = 0
-  if( typeof window !==`undefined`){
-    currentViewPort  = window.innerWidth
+ useEffect(
+  () => {
+    if( typeof window !==`undefined`){
+      window.addEventListener('resize', updateSize);
+      setResize(window.innerWidth)
+    }
+  },
+  [],
+);
+  const updateSize = () =>{
+    if( typeof window !==`undefined`){
+      setResize(window.innerWidth)
+      console.log(resize)
+    }
   }
 
 
@@ -37,7 +49,7 @@ const FirstSection = (props) => {
         </div>
       </Hidden>
       <BackgroundImage fluid={props.backgroundImage.edges[0].node.fluid}>
-        { currentViewPort >= 899 ? <Menu color="#fff"/> : ''}
+        { resize >= 899 ? <Menu color="#fff"/> : ''}
         <div className='firstSection__container'>
           <Slide in direction='right' timeout={300}>
             <div className='firstSection__content--wrapper'>

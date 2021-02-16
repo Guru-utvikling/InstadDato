@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react"
-import { makeStyles, useTheme } from "@material-ui/core/styles"
 import { Link } from "gatsby"
 import Button from "@material-ui/core/Button"
-import { graphql, useStaticQuery } from "gatsby"
-import Image from "gatsby"
 import Slide from "@material-ui/core/Slide"
 
 import Menu from "../Menu/Menu"
@@ -16,18 +13,17 @@ const MainSection = (props) => {
       window.addEventListener("resize", updateSize)
       setResize(window.innerWidth)
     }
-  }, [])
+  },[])
   const updateSize = () => {
     if (typeof window !== `undefined`) {
       setResize(window.innerWidth)
-      console.log(resize)
     }
   }
 
   return (
     <div className='mainSection__main__container'>
       <div>
-        {resize >= 899 ? <Menu color='#fff' /> : ""}
+        {/*resize >= 899 ? <Menu color='#fff' /> : ""*/}
         <div className='mainSection__container'>
           <Slide in direction='right' timeout={300}>
             <div className='mainSection__content--wrapper'>

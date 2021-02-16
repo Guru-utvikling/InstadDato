@@ -1,14 +1,11 @@
 import React from "react"
-import Masonry from "react-masonry-component"
 import { Link } from "gatsby"
-import { makeStyles, useTheme } from "@material-ui/core/styles"
+import { makeStyles } from "@material-ui/core/styles"
 import Card from "@material-ui/core/Card"
 import CardContent from "@material-ui/core/CardContent"
-import CardMedia from "@material-ui/core/CardMedia"
-import IconButton from "@material-ui/core/IconButton"
 import Typography from "@material-ui/core/Typography"
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   details: {
     display: "flex",
     flexDirection: "column",
@@ -24,7 +21,6 @@ const useStyles = makeStyles((theme) => ({
 
 const ActiveJobsList = (props) => {
   const classes = useStyles()
-  const theme = useTheme()
   return (
     <>
       {" "}

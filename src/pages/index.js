@@ -1,6 +1,5 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import Layout from "../components/layout"
 import MainSection from "../components/MainSection/MainSection"
 import SecondSection from "../components/SecondSection/SecondSection"
 import ThirdSection from "../components/ThirdSection/ThirdSection"
@@ -65,6 +64,7 @@ export const query = graphql`
           title
           icon {
             url
+            alt
           }
         }
       }

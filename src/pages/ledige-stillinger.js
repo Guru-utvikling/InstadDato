@@ -1,23 +1,13 @@
 import React, { useEffect, useState } from "react"
 import Layout from "../components/layout"
 import ActiveJobList from "../components/ActiveJobList/ActiveJobList"
-import { makeStyles } from "@material-ui/core/styles"
-import Typography from "@material-ui/core/Typography"
 import CircularProgress from "@material-ui/core/CircularProgress"
 import { Link } from "gatsby"
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: "flex",
-    "& > * + *": {
-      marginLeft: theme.spacing(2),
-    },
-  },
-}))
+
 
 const LedigeStillinger = () => {
   const [activeJobs, setActiveJobs] = useState()
   const [dataIsLoading, setDataIsLoading] = useState(true)
-  const classes = useStyles()
 
   const getAllActiveJobs = (req, res) => {
     const proxy = "https://cors-anywhere.herokuapp.com/"
@@ -46,6 +36,7 @@ const LedigeStillinger = () => {
   useEffect(() => {
     init()
     return () => {}
+     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (

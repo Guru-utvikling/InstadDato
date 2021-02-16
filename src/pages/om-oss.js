@@ -1,10 +1,10 @@
 import React from "react"
-import Layout from "../components/layout"
 import Grid from "@material-ui/core/Grid"
 import Image from "gatsby-image"
+import LeftPanelLayout from "../components/left-panle-layout"
 const OmOss = ({ data }) => {
   return (
-    <Layout>
+    <LeftPanelLayout backgroundImage={data.allDatoCmsAsset} >
       <div className='om-oss-container'>
         <Grid
           container
@@ -29,7 +29,7 @@ const OmOss = ({ data }) => {
           <Image  className='om-oss-container__images--img' fluid={data.allDatoCmsAsset.edges[0].node.fluid}/>
         </Grid>
       </div>
-    </Layout>
+    </LeftPanelLayout>
   )
 }
 
@@ -37,7 +37,7 @@ export default OmOss
 
 export const query = graphql`
   query omOssQuery {
-    allDatoCmsAsset(filter: {filename: {eq:"om-ossimage.jpg"}}) {
+    bg: allDatoCmsAsset(filter: {filename: {eq:"om-ossimage.jpg"}}) {
     edges {
       node {
         fluid {
@@ -46,5 +46,14 @@ export const query = graphql`
       }
     }
   }
+  allDatoCmsAsset(filter: { filename: { eq: "first-section-bg.png" } }) {
+      edges {
+        node {
+          fluid {
+            ...GatsbyDatoCmsFluid
+          }
+        }
+      }
+    }
   }
 `

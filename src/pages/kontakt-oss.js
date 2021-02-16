@@ -8,25 +8,26 @@ import ListItemText from "@material-ui/core/ListItemText"
 import { ListItemIcon } from "@material-ui/core"
 import ListItem from "@material-ui/core/ListItem"
 import HomeIcon from "@material-ui/icons/Home"
-import TextField from "@material-ui/core"
+import LeftPanelLayout from "../components/left-panle-layout"
 const KontaktOss = ({ data }) => {
   const menuItems = [
-    { text: "+47 567 890 456", url: "tel:+47 567 890 456" },
-    { text: "post@epost.no", url: "mailto:post@epost.no" },
+    { text: "+47 567 890 456", url: "tel:+47 567 890 456", id: 10 },
+    { text: "post@epost.no", url: "mailto:post@epost.no", id: 11 },
     {
       text: "Halfdan Kjerulfsgate 4 5017 Bergen",
       url: "/ledige-stillinger",
       icon: <HomeIcon />,
+      id: 10,
     },
   ]
   return (
-    <Layout>
+    <LeftPanelLayout backgroundImage={data.allDatoCmsAsset}>
       <Grid className='omOss__container'>
         <Grid item lg={12} className='omOss__container__content'>
           <Grid lg={6} item>
             <Image
               className='omOss__container__image'
-              fluid={data.allDatoCmsAsset.edges[0].node.fixed}
+              fixed={data.allDatoCmsAsset.edges[0].node.fixed}
             />
           </Grid>
           <Grid lg={6} item>
@@ -34,6 +35,7 @@ const KontaktOss = ({ data }) => {
             <List>
               {menuItems.map((item) => (
                 <Link
+                  key={item.id}
                   style={{ color: "inherit", textDecoration: "none" }}
                   to={item.url}
                 >
@@ -47,11 +49,9 @@ const KontaktOss = ({ data }) => {
           </Grid>
         </Grid>
 
-        <Grid item lg={12} className='omOss__container__form'>
-
-        </Grid>
+        <Grid item lg={12} className='omOss__container__form'></Grid>
       </Grid>
-    </Layout>
+    </LeftPanelLayout>
   )
 }
 

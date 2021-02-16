@@ -2,20 +2,15 @@
 
 import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
-import { Link } from "gatsby"
-import { StaticQuery, graphql } from "gatsby"
-import { HelmetDatoCms } from "gatsby-source-datocms"
 import Header from "../components/Header/Header"
 import "../styles/index.sass"
 import Footer from "./Footer/Footer"
 import { Fade } from "@material-ui/core"
-import Menu from "../components/Menu/Menu"
 
 const Layout = ({ children }) => {
   const [resize, setResize] = useState()
 
   let currentURL = ""
-  let currentViewPort = 0
 
   useEffect(() => {
     if (typeof window !== `undefined`) {
@@ -31,13 +26,12 @@ const Layout = ({ children }) => {
 
   if (typeof window !== `undefined`) {
     currentURL = window.location.pathname
-    currentViewPort = window.innerWidth
   }
 
   const renderMenu = () => {
     if (currentURL === "/" && resize >= 899) {
       return ""
-    } else if ((currentURL === "/" && resize <= 899) || currentURL != "/") {
+    } else if ((currentURL === "/" && resize <= 899) || currentURL !== "/") {
       return <Header />
     }
   }

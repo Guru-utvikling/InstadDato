@@ -11,7 +11,8 @@ import { Fade } from "@material-ui/core"
 import Menu from "../components/Menu/Menu"
 import Grid from "@material-ui/core"
 import LinkedInIcon from "@material-ui/icons/LinkedIn"
-const LeftPanelLayout = ({ children }) => {
+import BackgroundImage from "gatsby-background-image"
+const LeftPanelLayout = (props) => {
   return (
     <>
       <div className='layout__container'>
@@ -33,7 +34,9 @@ const LeftPanelLayout = ({ children }) => {
           </div>
         </div>
         <div className='layout__container--content'>
-          <main className='main_container'>{children}</main>
+          <BackgroundImage fluid={props.backgroundImage.edges[0].node.fluid} >
+            <main className='main_container'>{props.children}</main>
+          </BackgroundImage>
         </div>
       </div>
     </>

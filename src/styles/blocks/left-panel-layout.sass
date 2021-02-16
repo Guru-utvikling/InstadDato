@@ -1,0 +1,31 @@
+.layout__container
+  display: flex
+  flex-direction: row
+  &--panel
+    width: 20%
+    height: 100vh
+    position: relative
+
+  &--content
+    width: 80%
+    overflow: scroll
+    height: 100vh
+
+.firstSection__sidebar
+  background-color: $main
+  display: flex
+  height: calc( 100vh - 36.8px )
+  flex-direction: column
+  padding: 2.3rem
+  justify-content: space-between
+  img
+    padding: 2rem
+.firstSection__sidebar--list
+  text-align: end
+  line-height: 2rem
+  font-size: 14px
+  a
+    color: inherit
+    text-decoration: none
+@media screen and (max-width: 899px)
+  .firstSection__sidebar

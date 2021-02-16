@@ -31,23 +31,7 @@ const FirstSection = (props) => {
 
   return (
     <div className='firstSection__main__container'>
-      <Hidden smDown>
-        <div className='firstSection__sidebar'>
-          <img src='https://www.datocms-assets.com/41475/1611574344-instad-logo.png' />
-          <ul className='firstSection__sidebar--list'>
-            <li>Halfdan Kjerulfsgate 4</li>
-            <li>5017 Bergen</li>
-            <li>
-              <Link to='tel:+47 994 00 900'>+47 994 00 900</Link>
-            </li>
-            <li>
-              <Link to='https://www.linkedin.com/company/instad/'>
-                <LinkedInIcon />
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </Hidden>
+
       <BackgroundImage fluid={props.backgroundImage.edges[0].node.fluid}>
         { resize >= 899 ? <Menu color="#fff"/> : ''}
         <div className='firstSection__container'>

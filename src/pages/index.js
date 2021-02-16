@@ -8,8 +8,9 @@ import NewsletterSection from "../components/NewsletterSection/NewsletterSection
 import BoxesSection from "../components/BoxesSection/BoxesSection"
 import ArticlePreview from "../components/ArticlesPreview/ArticlesPreview"
 import RegisterCvCTA from "../components/RegisterCv_CTA/RegisterCvCTA"
+import LeftPanelLayout from "../components/left-panle-layout"
 const IndexPage = ({ data }) => (
-  <Layout>
+  <LeftPanelLayout>
       <FirstSection backgroundImage={data.allDatoCmsAsset} />
       <SecondSection />
       <ThirdSection />
@@ -28,7 +29,7 @@ const IndexPage = ({ data }) => (
           </Link>
         </div>
       </div>
-  </Layout>
+  </LeftPanelLayout>
 )
 
 export default IndexPage

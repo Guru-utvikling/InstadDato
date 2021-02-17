@@ -28,7 +28,7 @@ const BoxesSection = (props) => {
         className='service_box_container'
         container
         direction='row'
-        lg={6}
+        lg={12}
         xs={12}
         md={12}
         item

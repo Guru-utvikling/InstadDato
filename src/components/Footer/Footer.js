@@ -1,16 +1,30 @@
 import React from "react"
 import Grid from "@material-ui/core/Grid"
-import FacebookIcon from "@material-ui/icons/Facebook"
 import LinkedInIcon from "@material-ui/icons/LinkedIn"
-import Menu from "../Menu/Menu"
-import List from "@material-ui/core/List"
-import ListItemText from "@material-ui/core/ListItemText"
-import ListItem from "@material-ui/core/ListItem"
+import {Link} from 'gatsby'
 
 const Footer = () => {
   return (
-    <Grid className='footer__container' justify='center' container>
-      <Grid className='footer-item__wrapper' md lg={2} item>
+    <Grid  justify='center' container>
+      <ul style={{color:"#fff", textAlign:"center", margin:"2rem", }}>
+        <li>Halfdan Kjerulfsgate 4</li>
+        <li>5017 Bergen</li>
+        <li>
+          <Link style={{color:"#fff"}} to='tel:+47 994 00 900'>+47 994 00 900</Link>
+        </li>
+        <li>
+          <a to='https://www.linkedin.com/company/instad/'>
+            <LinkedInIcon />
+          </a>
+        </li>
+      </ul>
+    </Grid>
+  )
+}
+
+export default Footer
+
+/*      <Grid className='footer-item__wrapper' md lg={2} item>
         <img alt="Instad logo " src='https://www.datocms-assets.com/41475/1611574344-instad-logo.png' />
       </Grid>
       <Grid className='footer-item__wrapper' md lg={2} item>
@@ -51,9 +65,4 @@ const Footer = () => {
           <FacebookIcon />
           <LinkedInIcon />
         </div>
-      </Grid>
-    </Grid>
-  )
-}
-
-export default Footer
+      </Grid>*/

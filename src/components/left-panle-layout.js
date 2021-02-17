@@ -6,13 +6,14 @@ import "../styles/index.sass"
 import LinkedInIcon from "@material-ui/icons/LinkedIn"
 import BackgroundImage from "gatsby-background-image"
 import Menu from "../components/Menu/Menu"
+import Footer from "../components/Footer/Footer"
 const LeftPanelLayout = (props) => {
   return (
     <>
       <div className='layout__container'>
         <div className='layout__container--panel'>
           <div className='firstSection__sidebar'>
-            <Link to="/">
+            <Link to='/'>
               <img
                 alt='Instad Logo'
                 src='https://www.datocms-assets.com/41475/1611574344-instad-logo.png'
@@ -32,12 +33,14 @@ const LeftPanelLayout = (props) => {
             </ul>
           </div>
         </div>
-        <div className='layout__container--content'>
+        <span className="layout__container--content">
           <BackgroundImage fluid={props.backgroundImage.edges[0].node.fluid}>
             <Menu color='#fff' />
-            <main className='main_container'>{props.children}</main>
+            <main className='main_container'>
+              {props.children} <Footer />
+            </main>
           </BackgroundImage>
-        </div>
+        </span>
       </div>
     </>
   )

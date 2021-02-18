@@ -1,34 +1,31 @@
 import React, { useEffect, useState } from "react"
-import Layout from "../components/layout"
+import LeftPanelLayout from "../components/left-panle-layout"
 import ActiveJobList from "../components/ActiveJobList/ActiveJobList"
 import CircularProgress from "@material-ui/core/CircularProgress"
 import { Link } from "gatsby"
+import axios from "axios"
 
-
-const LedigeStillinger = () => {
+const LedigeStillinger = ({data}) => {
   const [activeJobs, setActiveJobs] = useState()
   const [dataIsLoading, setDataIsLoading] = useState(true)
 
-  const getAllActiveJobs = (req, res) => {
-    const proxy = "https://cors-anywhere.herokuapp.com/"
-    const api = `https://api.recman.no/v2/get/?key=${process.env.GATSBY_API_KEY}&scope=jobPost&fields=name,ingress,startDate,endDate,logo`
-    const url = proxy + api
-
-    return fetch(url, {
-      method: "GET",
+  const getDataFromServer = async () => {
+    const response = await axios.get("https://instad-1.herokuapp.com/data", {
+      headers: {
+        "X-Requested-With": "XMLHttpRequest",
+        "Access-Control-Allow-Origin": "*",
+        "Content-Type": "application/json",
+      },
     })
-      .then((res) => {
-        return res.json()
-      })
-      .catch((err) => console.log(err))
+    const data = await response
+    return data
   }
 
   const init = () => {
-    getAllActiveJobs().then((data) => {
+    getDataFromServer().then((data) => {
       if (dataIsLoading) {
         setActiveJobs(data)
         setDataIsLoading(false)
-        console.log(data)
       }
     })
   }
@@ -36,28 +33,16 @@ const LedigeStillinger = () => {
   useEffect(() => {
     init()
     return () => {}
-     // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
-    <Layout>
+    <LeftPanelLayout backgroundImage={data.bg}>
       {!dataIsLoading ? (
         <div className='ledige_stillinger_main_container'>
           <h1 className='bigSectionTitle'>Ledige stillinger</h1>
 
           <div className='container__ledige-stillinger'>
-            {/*<div className='ledige-filters__wrapper'>
-              <div className='container__ledige-filters'>
-                <Typography component='h3' variant='h5'>
-                  Filters
-                </Typography>
-                  <Link to='/ledige-stillinger'>
-                    <Typography component='p' variant='p'>
-                      Alle
-                    </Typography>
-                  </Link>
-              </div>
-        </div> */}
             <div className='container__ledige-list'>
               <ActiveJobList activelist={activeJobs} />
             </div>
@@ -72,8 +57,22 @@ const LedigeStillinger = () => {
           <CircularProgress color='primary' />
         </div>
       )}
-    </Layout>
+    </LeftPanelLayout>
   )
 }
 
 export default LedigeStillinger
+
+export const query = graphql`
+  query ledigeStill {
+    bg: allDatoCmsAsset(filter: { filename: { eq: "first-section-bg.png" } }) {
+      edges {
+        node {
+          fluid {
+            ...GatsbyDatoCmsFluid
+          }
+        }
+      }
+    }
+  }
+`

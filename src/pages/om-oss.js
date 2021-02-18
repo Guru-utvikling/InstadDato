@@ -4,7 +4,7 @@ import Image from "gatsby-image"
 import LeftPanelLayout from "../components/left-panle-layout"
 const OmOss = ({ data }) => {
   return (
-    <LeftPanelLayout backgroundImage={data.allDatoCmsAsset} >
+    <LeftPanelLayout backgroundImage={data.bg}>
       <div className='om-oss-container'>
         <Grid
           container
@@ -25,8 +25,14 @@ const OmOss = ({ data }) => {
           </p>
         </Grid>
         <Grid lg={6} container item className='om-oss-container__images'>
-          <Image  className='om-oss-container__images--img' fluid={data.allDatoCmsAsset.edges[0].node.fluid}/>
-          <Image  className='om-oss-container__images--img' fluid={data.allDatoCmsAsset.edges[0].node.fluid}/>
+          <Image
+            className='om-oss-container__images--img'
+            fluid={data.first.edges[0].node.fluid}
+          />
+          <Image
+            className='om-oss-container__images--img'
+            fluid={data.second.edges[0].node.fluid}
+          />
         </Grid>
       </div>
     </LeftPanelLayout>
@@ -37,16 +43,25 @@ export default OmOss
 
 export const query = graphql`
   query omOssQuery {
-    bg: allDatoCmsAsset(filter: {filename: {eq:"om-ossimage.jpg"}}) {
-    edges {
-      node {
-        fluid {
-          ...GatsbyDatoCmsFluid
+    bg: allDatoCmsAsset(filter: { filename: { eq: "first-section-bg.png" } }) {
+      edges {
+        node {
+          fluid {
+            ...GatsbyDatoCmsFluid
+          }
         }
       }
     }
-  }
-  allDatoCmsAsset(filter: { filename: { eq: "first-section-bg.png" } }) {
+    first: allDatoCmsAsset(filter: { filename: { eq: "om-ossimage.jpg" } }) {
+      edges {
+        node {
+          fluid {
+            ...GatsbyDatoCmsFluid
+          }
+        }
+      }
+    }
+    second: allDatoCmsAsset(filter: { filename: { eq: "arbeider1.jpg" } }) {
       edges {
         node {
           fluid {

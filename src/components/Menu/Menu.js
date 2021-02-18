@@ -13,7 +13,7 @@ const NavMenu = (props) => {
     { text: "Events", url: "/events", id: 4 },
     { text: "Blogg", url: "/blogg", id: 5 },
     { text: "Kontakt oss", url: "/kontakt-oss", id: 6 },
-    { text: "Logg inn", url: "https://instad.recman.no/login.php", id: 6 },
+    { text: "Logg inn", url: "https://instad.recman.no/login.php", id: 7 },
   ]
   return (
     <List

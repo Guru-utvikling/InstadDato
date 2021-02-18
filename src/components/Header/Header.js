@@ -13,7 +13,7 @@ import ChevronLeftIcon from "@material-ui/icons/ChevronLeft"
 import ChevronRightIcon from "@material-ui/icons/ChevronRight"
 import Button from "@material-ui/core/Button"
 import Grid from "@material-ui/core/Grid"
-import Menu from "../Menu/Menu"
+import NavMenu from "../Menu/Menu"
 
 import { Link } from "gatsby"
 import { Hidden } from "@material-ui/core"
@@ -132,7 +132,7 @@ export default function PersistentDrawerLeft() {
             </Grid>
             <Hidden smDown>
               <Grid md lg={6} xs={4} item className="menu__container">
-                <Menu direction="row" color="#000"/>
+                <NavMenu direction="row" color="#000"/>
               </Grid>
             </Hidden>
 
@@ -180,7 +180,7 @@ export default function PersistentDrawerLeft() {
         </div>
         <Divider />
         <List>
-          <Menu color="#000" direction="column" />
+          <NavMenu color="#000" direction="column" />
         </List>
       </Drawer>
     </div>

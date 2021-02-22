@@ -1,7 +1,6 @@
 import { Grid } from "@material-ui/core"
 import { Link } from "gatsby"
 import React from "react"
-import Layout from "../components/layout"
 import Image from "gatsby-image"
 import List from "@material-ui/core/List"
 import ListItemText from "@material-ui/core/ListItemText"
@@ -17,21 +16,18 @@ const KontaktOss = ({ data }) => {
       text: "Halfdan Kjerulfsgate 4 5017 Bergen",
       url: "/ledige-stillinger",
       icon: <HomeIcon />,
-      id: 10,
+      id: 12,
     },
   ]
   return (
-    <LeftPanelLayout backgroundImage={data.allDatoCmsAsset}>
-      <Grid className='omOss__container'>
-        <Grid item lg={12} className='omOss__container__content'>
+    <LeftPanelLayout backgroundImage={data.bg}>
+      <Grid container lg={12} className='kontakt-oss__container'>
+        <Grid item lg={12} className='kontakt-oss__container--content'>
           <Grid lg={6} item>
-            <Image
-              className='omOss__container__image'
-              fixed={data.allDatoCmsAsset.edges[0].node.fixed}
-            />
+              <Image fluid={data.img.edges[0].node.fluid}/>
           </Grid>
           <Grid lg={6} item>
-            <h1 className='bigSectionTitle'>Kontakt oss</h1>
+            <h1 className='bigSectionTitle bigSectionTitle__centered'>Kontakt oss</h1>
             <List>
               {menuItems.map((item) => (
                 <Link
@@ -49,7 +45,64 @@ const KontaktOss = ({ data }) => {
           </Grid>
         </Grid>
 
-        <Grid item lg={12} className='omOss__container__form'></Grid>
+        <Grid item lg={12} className='kontakt-oss__form'>
+        <form
+              className='kontakt-oss__form--wrapper'
+              method='POST'
+              data-netlify='true'
+              action='/thank-you'
+              name='Kontakt oss Form'
+            >
+              <input type='hidden' name='form-name' value='Kontakt oss Form' />
+              <label>
+                <input
+                  required
+                  placeholder='Navn*'
+                  type='text'
+                  name='name'
+                  id='name'
+                />
+              </label>
+              <label>
+                <input
+                  placeholder='Telefon*'
+                  type='tel'
+                  id='phone'
+                  name='phone'
+                  required
+                />
+              </label>
+              <label>
+                <input
+                  placeholder='E-post*'
+                  type='email'
+                  name='email'
+                  id='email'
+                  required
+                />
+              </label>
+              <label>
+                <input
+                  placeholder='Firma (Company)'
+                  type='text'
+                  name='Firma'
+                  id='firma'
+                />
+              </label>
+              <label>
+                <textarea
+                  placeholder='Melding'
+                  name='message'
+                  id='message'
+                  required
+                  rows='5'
+                />
+              </label>
+              <button className='submit-btn-form' type='submit'>
+                Kontakt oss
+              </button>
+            </form>
+        </Grid>
       </Grid>
     </LeftPanelLayout>
   )
@@ -59,11 +112,20 @@ export default KontaktOss
 
 export const query = graphql`
   query kontaktOssQuery {
-    allDatoCmsAsset(filter: { filename: { eq: "first-section-bg.png" } }) {
+    img :allDatoCmsAsset(filter: { filename: { eq: "welding-21781271920.jpg" } }) {
       edges {
         node {
-          fixed {
-            ...GatsbyDatoCmsFixed
+          fluid {
+            ...GatsbyDatoCmsFluid
+          }
+        }
+      }
+    }
+    bg :allDatoCmsAsset(filter: { filename: { eq: "first-section-bg.png" } }) {
+      edges {
+        node {
+          fluid {
+            ...GatsbyDatoCmsFluid
           }
         }
       }

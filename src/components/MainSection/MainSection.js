@@ -51,13 +51,13 @@ const MainSection = (props) => {
                   </Link>
                 </Button>
                 <Button disableRipple>
-                  <Link
-                    to={"/om-oss"}
+                  <a
+                    href="mailto:soknad.bgo@instad.no"
                     style={{ backgroundColor: "#fff" }}
                     className='CTA__button'
                   >
-                    Om oss
-                  </Link>
+                    Project inquiries 
+                  </a>
                 </Button>
               </div>
             </div>

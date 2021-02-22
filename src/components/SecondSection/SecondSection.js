@@ -18,7 +18,7 @@ const SecondSection = () => {
         >
           <img
             alt='excavator on site'
-            src='https://www.datocms-assets.com/41475/1611652037-second-section-bg-1.jpg'
+            src='https://www.datocms-assets.com/41475/1613570699-construction-site.jpg'
           />
         </Grid>
         <Grid
@@ -27,7 +27,7 @@ const SecondSection = () => {
           lg={6}
           item
         >
-          <img alt="workers working" src='https://www.datocms-assets.com/41475/1611652243-pexels-matthew-t-rader-5050860.jpg' />
+          <img alt="workers working" src='https://www.datocms-assets.com/41475/1613642190-om-oss-image-1.jpg' />
         </Grid>
       </Grid>
       <Grid

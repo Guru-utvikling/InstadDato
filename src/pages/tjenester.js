@@ -30,23 +30,6 @@ const Tjenester = ({ data }) => {
             fluid={data.first.edges[0].node.fluid}
           />
         </div>
-        <div className='register_cv_CTA'>
-          <h2 className='bigSectionTitle'>Ønsker du å vite mer?</h2>
-          <h4> E-post: </h4>
-          <a
-            href='mailto:soknad@instad.no'
-            className='CTA__button CTA__button__registerCV'
-          >
-            soknad@instad.no
-          </a>
-          <h4> Tlf: </h4>
-          <a
-            href='tel:99400900'
-            className='CTA__button CTA__button__registerCV'
-          >
-            994 00 900
-          </a>
-        </div>
       </div>
     </LeftPanelLayout>
   )

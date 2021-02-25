@@ -13,10 +13,7 @@ const IndexPage = ({ data }) => (
   <LeftPanelLayout backgroundImage={data.allDatoCmsAsset}>
     <MainSection />
     <SecondSection />
-    <ThirdSection />
-    <NewsletterSection />
     <BoxesSection boxData={data.allDatoCmsServiceBox} />
-    <RegisterCvCTA />
     <div >
       <h2
         style={{ color: "#fff" }}

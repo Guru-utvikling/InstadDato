@@ -13,7 +13,6 @@ const BoxesSection = (props) => {
         item
         container
       >
-        <h6 className='smallSectionSubTitle'>OM OSS</h6>
         <h2 className='bigSectionTitle' style={{color:'#fff'}}>Om Instad AS</h2>
         <p className='paraSection'style={{color:'#fff'}} >
           Instad AS ble startet i desember 2019, av Bjarne Jakobsen og Trond

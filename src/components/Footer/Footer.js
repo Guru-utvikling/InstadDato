@@ -1,68 +1,57 @@
 import React from "react"
 import Grid from "@material-ui/core/Grid"
-import LinkedInIcon from "@material-ui/icons/LinkedIn"
-import {Link} from 'gatsby'
-
-const Footer = () => {
+const NewsletterSection = () => {
   return (
-    <Grid  justify='center' container>
-      <ul style={{color:"#fff", textAlign:"center", margin:"2rem", }}>
-        <li>Halfdan Kjerulfsgate 4</li>
-        <li>5017 Bergen</li>
-        <li>
-          <Link style={{color:"#fff"}} to='tel:+47 994 00 900'>+47 994 00 900</Link>
-        </li>
-        <li>
-          <a to='https://www.linkedin.com/company/instad/'>
-            <LinkedInIcon />
-          </a>
-        </li>
-      </ul>
+    <Grid
+      className='newsletterSection__container'
+      container
+      direction='row'
+      alignItems='center'
+    >
+      <Grid
+        alignItems='center'
+        justify="center"
+        container
+        item
+        lg={6}
+        xs={12}
+      >
+        <img className="newsletterSection__image" alt="conversation icon" src='https://www.datocms-assets.com/41475/1612531516-conversation-icon.svg' />
+        <div  className='newsletterSection__content'>
+          <h2 style={{color:"#fff",fontWeight:'900',fontSize:'18px'}} >Har du noen spørsmål?</h2>
+          <p style={{color:'#fff'}} className="paraSection">Send en henvendelse, så tar vi kontakt med deg.</p>
+        </div>
+      </Grid>
+      <Grid
+        alignItems='center'
+        justify="center"
+        container
+        item
+        lg={4}
+        xs={12}
+      >
+        <form
+          method='POST'
+          data-netlify='true'
+          action='/thank-you'
+          name='Newsletter Signup'
+          className="form__container"
+        >
+          <input type='hidden' name='form-name' value='Newsletter Signup' />
+          <div className='question__form--wrapper'>
+            <input
+              type='email'
+              name='E-post'
+              id='e-post'
+              placeholder='E-post'
+              className='question__text--input'
+            />
+            <button className='question__submit--input'  aria-label="Submit" type='submit' value='' />
+          </div>
+        </form>
+      </Grid>
     </Grid>
   )
 }
 
-export default Footer
-
-/*      <Grid className='footer-item__wrapper' md lg={2} item>
-        <img alt="Instad logo " src='https://www.datocms-assets.com/41475/1611574344-instad-logo.png' />
-      </Grid>
-      <Grid className='footer-item__wrapper' md lg={2} item>
-        <h4 className='smallBoldTitle'>Meny</h4>
-        <Menu color='#000' direction='column' />
-      </Grid>
-      <Grid className='footer-item__wrapper' md lg={2} item>
-        <h4 className='smallBoldTitle'>Kontakt oss</h4>
-        <List>
-          <ListItem>
-            <ListItemText>
-              <a
-                style={{ textDecoration: "none", color: "inherit" }}
-                href='tel:+47 567 890 456'
-              >
-                +47 567 890 456
-              </a>
-            </ListItemText>
-          </ListItem>
-          <ListItem>
-            <ListItemText>
-              <a
-                style={{ textDecoration: "none", color: "inherit" }}
-                href='mailto:post@epost.no'
-              >
-                post@epost.no
-              </a>
-            </ListItemText>
-          </ListItem>
-          <ListItem>
-            <ListItemText>Halfdan Kjerulfsgate 4 5017 Bergen</ListItemText>
-          </ListItem>
-        </List>
-      </Grid>
-      <Grid className='footer-item__wrapper' md lg={2} item>
-        <h4 className='smallBoldTitle'>Follow us</h4>
-        <div>
-          <FacebookIcon />
-          <LinkedInIcon />
-        </div>
-      </Grid>*/
+export default NewsletterSection

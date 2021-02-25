@@ -28,9 +28,27 @@ const LeftPanelLayout = (props) => {
               <li>
                 <Link to='tel:+47 994 00 900'>+47 994 00 900</Link>
               </li>
-              <li >
+              <li>
                 <a to='https://www.linkedin.com/company/instad/'>
-                  <img  height="12px" width="12px" src="https://www.datocms-assets.com/41475/1614253597-linkedin.svg"/>
+                  <img
+                    height='12px'
+                    width='12px'
+                    src='https://www.datocms-assets.com/41475/1614253597-linkedin.svg'
+                  />
+                </a>
+                <a>
+                  <img
+                    height='12px'
+                    width='12px'
+                    src='https://www.datocms-assets.com/41475/1614258598-icon-awesome-facebook.png'
+                  />
+                </a>
+                <a>
+                  <img
+                    height='12px'
+                    width='12px'
+                    src='https://www.datocms-assets.com/41475/1614258922-instagram.png'
+                  />
                 </a>
               </li>
             </ul>

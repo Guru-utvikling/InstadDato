@@ -13,7 +13,7 @@ const MainSection = (props) => {
       window.addEventListener("resize", updateSize)
       setResize(window.innerWidth)
     }
-  },[])
+  }, [])
   const updateSize = () => {
     if (typeof window !== `undefined`) {
       setResize(window.innerWidth)
@@ -23,7 +23,6 @@ const MainSection = (props) => {
   return (
     <div className='mainSection__main__container'>
       <div>
-        {/*resize >= 899 ? <Menu color='#fff' /> : ""*/}
         <div className='mainSection__container'>
           <Slide in direction='right' timeout={300}>
             <div className='mainSection__content--wrapper'>
@@ -40,30 +39,26 @@ const MainSection = (props) => {
                 solutions available on the market to make things easier and less
                 complicated, for both our employees and customers.
               </p>
-              <div className='CTA__button--wrapper'>
-                <Button disableRipple>
-                  <Link
-                    to={"/ledige-stillinger"}
-                    style={{ backgroundColor: "#feda01" }}
-                    className='CTA__button'
-                  >
-                    Ledige stillinger
-                  </Link>
-                </Button>
-                <Button disableRipple>
-                  <a
-                    href="mailto:soknad.bgo@instad.no"
-                    style={{ backgroundColor: "#fff" }}
-                    className='CTA__button'
-                  >
-                    Project inquiries 
-                  </a>
-                </Button>
+              <div>
+                <a
+                  href={"https://instad.recman.no/register.php"}
+                  style={{ backgroundColor: "#feda01" }}
+                  className='main_section__CTA__button'
+                >
+                  REGISTER YOUR CV
+                </a>
+                <a
+                  href='mailto:soknad.bgo@instad.no'
+                  style={{ backgroundColor: "#fff" }}
+                  className='main_section__CTA__button'
+                >
+                  PROJECT INQUIRIES
+                </a>
               </div>
             </div>
           </Slide>
         </div>
-    </div>
+      </div>
     </div>
   )
 }

@@ -2,7 +2,7 @@
   display: flex
   flex-direction: row
   &--panel
-    width: 15%
+    width: 15vw
     height: 100vh
     position: relative
     img
@@ -16,16 +16,26 @@
 .firstSection__sidebar
   background-color: $main
   display: flex
-  height: calc( 100vh - 36.8px )
+  height: 100vh
   flex-direction: column
-  padding: 2.3rem
   justify-content: space-between
   img
-    padding: 2rem
+    width: 140px
+    margin-left: 40px
+
 .firstSection__sidebar--list
-  text-align: end
-  line-height: 2rem
-  font-size: 14px
+  justify-content: flex-end
+  display: flex
+  flex-direction: column
+  height: 100%
+  text-align: right
+  padding: 0 40px 70px 0
+  font-size: 12px
+  line-height: 2.5em
+  img
+    width: 12px !important
+  li
+    text-align: end
   a
     color: inherit
     text-decoration: none

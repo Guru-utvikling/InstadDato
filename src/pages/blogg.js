@@ -7,7 +7,7 @@ export default function PostArchive({ data }) {
   return (
     <LeftPanelLayout backgroundImage={data.allDatoCmsAsset}>
       
-      <h1 className="bigSectionTitle bigSectionTitle__centered">Blogg</h1>
+      <h1 style={{padding:'0 7rem'}} className="bigSectionTitle">Blogg</h1>
       <ArticlePreview post={data.allDatoCmsNyheter} />
     </LeftPanelLayout>
   )

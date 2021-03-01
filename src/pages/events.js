@@ -5,7 +5,7 @@ const Events = ({ data }) => {
     <LeftPanelLayout backgroundImage={data.allDatoCmsAsset}>
       <div className="event__container">
         {data.allDatoCmsEvent.nodes.map(( event ) => (
-          <div key={event.id} className='service_box_wrapper'>
+          <div key={event.id} className='event_box_wrapper'>
             <h2>{event.title}</h2>
           </div>
         ))}

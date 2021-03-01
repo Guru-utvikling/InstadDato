@@ -1,54 +1,144 @@
-import { Grid } from "@material-ui/core"
-import { Link } from "gatsby"
 import React from "react"
+import Grid from "@material-ui/core/Grid"
 import Image from "gatsby-image"
-import List from "@material-ui/core/List"
-import ListItemText from "@material-ui/core/ListItemText"
-import { ListItemIcon } from "@material-ui/core"
-import ListItem from "@material-ui/core/ListItem"
-import HomeIcon from "@material-ui/icons/Home"
 import LeftPanelLayout from "../components/left-panle-layout"
+import { TextField } from "@material-ui/core"
+import Link from "gatsby"
 const KontaktOss = ({ data }) => {
-  const menuItems = [
-    { text: "+47 567 890 456", url: "tel:+47 567 890 456", id: 10 },
-    { text: "post@epost.no", url: "mailto:post@epost.no", id: 11 },
-    {
-      text: "Halfdan Kjerulfsgate 4 5017 Bergen",
-      url: "/ledige-stillinger",
-      icon: <HomeIcon />,
-      id: 12,
-    },
-  ]
   return (
     <LeftPanelLayout backgroundImage={data.bg}>
-      <Grid container lg={12} className='kontakt-oss__container'>
-        <Grid item lg={12} className='kontakt-oss__container--content'>
-          <Grid lg={6} item>
-            <Image fluid={data.img.edges[0].node.fluid} />
-          </Grid>
-          <Grid lg={6} item>
-            <h1 className='bigSectionTitle bigSectionTitle__centered'>
-              Kontakt oss
-            </h1>
-            <List>
-              {menuItems.map((item) => (
-                <Link
-                  key={item.id}
-                  style={{ color: "inherit", textDecoration: "none" }}
-                  to={item.url}
-                >
-                  <ListItem key={item.url}>
-                    <ListItemIcon>{item.icon}</ListItemIcon>
-                    <ListItemText primary={item.text} />
-                  </ListItem>
-                </Link>
-              ))}
-            </List>
+      <div className='om-oss-container'>
+        <Grid
+          container
+          item
+          lg={6}
+          xs={12}
+          className='om-oss-container__content'
+        >
+          <h1 className='bigSectionTitle'> Kontakt oss</h1>
+          <ul className='kontakt-oss_list'>
+            <li>Halfdan Kjerulfsgate 4</li>
+            <li>5017 Bergen</li>
+            <li>
+              <a to='tel:+47 994 00 900'>+47 994 00 900</a>
+            </li>
+            <li>
+              <a to='https://www.linkedin.com/company/instad/'>
+                <img
+                  height='35px'
+                  width='35px'
+                  src='https://www.datocms-assets.com/41475/1614253597-linkedin.svg'
+                />
+              </a>
+              <a>
+                <img
+                  height='35px'
+                  width='35px'
+                  src='https://www.datocms-assets.com/41475/1614258598-icon-awesome-facebook.png'
+                />
+              </a>
+              <a>
+                <img
+                  height='35px'
+                  width='35px'
+                  src='https://www.datocms-assets.com/41475/1614258922-instagram.png'
+                />
+              </a>
+            </li>
+          </ul>
+
+          <Grid className='kontakt-oss__form__container'>
+            <form
+              className='kontakt-oss__form--wrapper'
+              method='POST'
+              data-netlify='true'
+              action='/thank-you'
+              name='Kontakt oss Form'
+            >
+              <div>
+                <TextField
+                  required
+                  id='epost-required'
+                  label='E-post'
+                  type='email'
+                  name='email'
+                  id='email'
+                  required
+                />
+                <TextField
+                  required
+                  id='phone-required'
+                  label='Mobilnummer'
+                  type='tel'
+                  name='phone'
+                  id='phone'
+                  required
+                />
+                <TextField
+                  required
+                  id='navn-required'
+                  label='Fullt navn'
+                  type='text'
+                  name='name'
+                  id='name'
+                  required
+                />
+                <TextField
+                  required
+                  id='navn-required'
+                  label='Hva kan vi hjelpe deg med?'
+                  type='text'
+                  name='message'
+                  id='message'
+                  required
+                  rows={4}
+                />
+              </div>
+              <button className='submit-btn-form' type='submit'>
+                Kontakt oss
+              </button>
+            </form>
           </Grid>
         </Grid>
+        <Grid lg={6} container item className='om-oss-container__images'>
+          <Image
+            className='om-oss-container__images--img'
+            fluid={data.first.edges[0].node.fluid}
+          />
+        </Grid>
+      </div>
+    </LeftPanelLayout>
+  )
+}
 
-        <Grid item lg={12} className='kontakt-oss__form'>
-          <form
+export default KontaktOss
+
+export const query = graphql`
+  query kontaktOssQUery {
+    bg: allDatoCmsAsset(filter: { filename: { eq: "first-section-bg.png" } }) {
+      edges {
+        node {
+          fluid {
+            ...GatsbyDatoCmsFluid
+          }
+        }
+      }
+    }
+    first: allDatoCmsAsset(
+      filter: { filename: { eq: "welding-21781271920.jpg" } }
+    ) {
+      edges {
+        node {
+          fluid {
+            ...GatsbyDatoCmsFluid
+          }
+        }
+      }
+    }
+  }
+`
+
+/*          <form
             className='kontakt-oss__form--wrapper'
             method='POST'
             data-netlify='true'
@@ -96,36 +186,4 @@ const KontaktOss = ({ data }) => {
             <button className='submit-btn-form' type='submit'>
               Kontakt oss
             </button>
-          </form>
-        </Grid>
-      </Grid>
-    </LeftPanelLayout>
-  )
-}
-
-export default KontaktOss
-
-export const query = graphql`
-  query kontaktOssQuery {
-    img: allDatoCmsAsset(
-      filter: { filename: { eq: "welding-21781271920.jpg" } }
-    ) {
-      edges {
-        node {
-          fluid {
-            ...GatsbyDatoCmsFluid
-          }
-        }
-      }
-    }
-    bg: allDatoCmsAsset(filter: { filename: { eq: "first-section-bg.png" } }) {
-      edges {
-        node {
-          fluid {
-            ...GatsbyDatoCmsFluid
-          }
-        }
-      }
-    }
-  }
-`
+          </form> */

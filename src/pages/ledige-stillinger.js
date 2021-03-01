@@ -40,16 +40,16 @@ const LedigeStillinger = ({data}) => {
     <LeftPanelLayout backgroundImage={data.bg}>
       {!dataIsLoading ? (
         <div className='ledige_stillinger_main_container'>
-          <h1 className='bigSectionTitle'>Ledige stillinger</h1>
+          <h1 id='top' className='bigSectionTitle'>Ledige stillinger</h1>
 
           <div className='container__ledige-stillinger'>
             <div className='container__ledige-list'>
               <ActiveJobList activelist={activeJobs} />
             </div>
           </div>
-          <Link to='#' className='ga-top'>
+          <a href='#top' className='ga-top'>
             Gå til toppen
-          </Link>
+          </a>
         </div>
       ) : (
         <div className='loading-div'>

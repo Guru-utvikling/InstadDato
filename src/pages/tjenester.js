@@ -5,8 +5,8 @@ import Grid from "@material-ui/core"
 const Tjenester = ({ data }) => {
   return (
     <LeftPanelLayout backgroundImage={data.bg}>
-      <div>
-        <div style={{ padding: "5rem" }}>
+      <div className='tjenester__container'>
+        <div className='tjenester__content' style={{ padding: "5rem" }}>
           <h6 className='smallSectionSubTitle'>VARE TJENESTER</h6>
           <h2 style={{ color: "#fff" }} className='bigSectionTitle'>
             Bygg, Anlegg, Installasjon og Industri
@@ -20,15 +20,8 @@ const Tjenester = ({ data }) => {
             våre medarbeidere.
           </p>
         </div>
-        <div className='tjenester__image--wrapper'>
-          <Image
-            className='om-oss-container__images--img'
-            fluid={data.first.edges[0].node.fluid}
-          />
-          <Image
-            className='om-oss-container__images--img'
-            fluid={data.first.edges[0].node.fluid}
-          />
+        <div className="image__wrapper">
+          <Image width="100%" height="100%" fluid={data.first.edges[0].node.fluid} />
         </div>
       </div>
     </LeftPanelLayout>

@@ -14,15 +14,15 @@ const IndexPage = ({ data }) => (
     <MainSection />
     <SecondSection />
     <BoxesSection boxData={data.allDatoCmsServiceBox} />
-    <div >
+    <div>
       <h2
-        style={{ color: "#fff" }}
+        style={{ padding: " 0 7rem", scolor: "#fff" }}
         className='bigSectionTitle bigSectionTitle__left'
       >
         Se de siste innleggene
       </h2>
-      <ArticlePreview post={data.allDatoCmsNyheter} />
 
+      <ArticlePreview post={data.allDatoCmsNyheter} />
       <div style={{ textAlign: "center", marginBottom: "3rem" }}>
         <Link className='see_all__btn' to='/blogg'>
           Se alle innlegg

@@ -54,6 +54,7 @@ import ClickAwayListener from "@material-ui/core/ClickAwayListener"
 const useStyles = makeStyles((theme) => ({
   root: {
     position: "relative",
+ 
   },
   dropdown: {
     position: "absolute",
@@ -61,10 +62,14 @@ const useStyles = makeStyles((theme) => ({
     right: 0,
     left: 0,
     zIndex: 1,
-    border: "1px solid",
-    padding: theme.spacing(1),
-    backgroundColor: theme.palette.background.paper,
+    minWidth:'200px',
+    backgroundColor: 'inherit',
   },
+  item:{
+      fontFamily:'inherit',
+      padding:'10px 0'
+      
+  }
 }))
 
 export default function ClickAway() {
@@ -82,23 +87,23 @@ export default function ClickAway() {
   return (
     <ClickAwayListener onClickAway={handleClickAway}>
       <div className={classes.root}>
-        <li onClick={handleClick}>
+        <li  onClick={handleClick}>
           Om oss
         </li>
         {open ? (
           <div className={classes.dropdown}>
-            <MenuItem>
+            <MenuItem className={classes.item} >
               <Link
-                style={{ textDecoration: "none", color: "#000" }}
+                style={{ textDecoration: "none", color: "#fff" }}
                 className='second-menu--link'
                 to='/om-oss'
               >
                 Om oss
               </Link>
             </MenuItem>
-            <MenuItem>
+            <MenuItem className={classes.item} >
               <Link
-                style={{ textDecoration: "none", color: "#000" }}
+                style={{ textDecoration: "none", color: "#fff" }}
                 className='second-menu--link'
                 to='/ansatte'
               >

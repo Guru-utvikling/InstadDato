@@ -13,9 +13,10 @@ const LeftPanelLayout = (props) => {
       <div className='layout__container'>
         <div className='layout__container--panel'>
           <div className='firstSection__sidebar'>
-            <div>
+            <div style={{ textAlign: "center" }}>
               <Link to='/'>
                 <img
+                  style={{ margin: 0 }}
                   alt='Instad Logo'
                   src='https://www.datocms-assets.com/41475/1614251900-instad-logo2.png'
                 />

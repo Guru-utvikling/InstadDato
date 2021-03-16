@@ -34,7 +34,7 @@ const BoxesSection = (props) => {
       >
         {props.boxData.edges.map(({ node: service_box }) => (
           <div key={service_box.id} className='service_box_wrapper'>
-            <img alt={service_box.icon.alt} className="service_box_icon" src={service_box.icon.url} />
+            <img height={40} alt={service_box.icon.alt} className="service_box_icon" src={service_box.icon.url} />
             <h2>{service_box.title}</h2>
             <p>{service_box.shortDescription}</p>
           </div>

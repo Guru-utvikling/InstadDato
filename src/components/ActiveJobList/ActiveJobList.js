@@ -58,7 +58,7 @@ const ActiveJobsList = (props) => {
         })
       ) : (
         <div className='no-jobs-container'>
-          <h1>Vi har for tiden ingen ledige stillinger.</h1>
+          <h1 style={{color:'#fff'}}>Vi har for tiden ingen ledige stillinger.</h1>
         </div>
       )}
     </>

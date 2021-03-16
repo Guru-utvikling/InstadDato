@@ -31,6 +31,7 @@ const SecondSection = () => {
           item
         >
           <img
+            height={227}
             alt='excavator on site'
             src='https://www.datocms-assets.com/41475/1613570699-construction-site.jpg'
           />
@@ -42,6 +43,7 @@ const SecondSection = () => {
           item
         >
           <img
+            height={227}
             alt='workers working'
             src='https://www.datocms-assets.com/41475/1613642190-om-oss-image-1.jpg'
           />

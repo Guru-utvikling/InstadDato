@@ -7,13 +7,12 @@ import Link from "gatsby"
 const KontaktOss = ({ data }) => {
   return (
     <LeftPanelLayout backgroundImage={data.bg}>
-      <div className='om-oss-container'>
         <Grid
           container
           item
-          lg={6}
+          lg={12}
           xs={12}
-          className='om-oss-container__content'
+          className='kontakt-oss__container--content'
         >
           <h1 className='bigSectionTitle'> Kontakt oss</h1>
           <ul className='kontakt-oss_list'>
@@ -100,13 +99,6 @@ const KontaktOss = ({ data }) => {
             </form>
           </Grid>
         </Grid>
-        <Grid lg={6} container item className='om-oss-container__images'>
-          <Image
-            className='om-oss-container__images--img'
-            fluid={data.first.edges[0].node.fluid}
-          />
-        </Grid>
-      </div>
     </LeftPanelLayout>
   )
 }

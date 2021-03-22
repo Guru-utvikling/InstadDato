@@ -7,57 +7,67 @@ import LinkedInIcon from "../assets/LinkedIn.svg"
 import BackgroundImage from "gatsby-background-image"
 import Menu from "../components/Menu/Menu"
 import Footer from "../components/Footer/Footer"
+import Hidden from "@material-ui/core/Hidden"
+import MobileMenu from '../components/Menu/MobileMenu'
 const LeftPanelLayout = (props) => {
   return (
     <>
       <div className='layout__container'>
-        <div className='layout__container--panel'>
-          <div className='firstSection__sidebar'>
-            <div style={{ textAlign: "center" }}>
-              <Link to='/'>
-                <img
-                  style={{ margin: 0 }}
-                  alt='Instad Logo'
-                  src='https://www.datocms-assets.com/41475/1614251900-instad-logo2.png'
-                />
-              </Link>
-            </div>
+        <Hidden mdUp>
+          <MobileMenu/>
+        </Hidden>
+        <Hidden mdDown>
+          <div className='layout__container--panel'>
+            <div className='firstSection__sidebar'>
+              <div style={{ textAlign: "center" }}>
+                <Link to='/'>
+                  <img
+                    style={{ margin: 0 }}
+                    alt='Instad Logo'
+                    src='https://www.datocms-assets.com/41475/1614251900-instad-logo2.png'
+                  />
+                </Link>
+              </div>
 
-            <ul className='firstSection__sidebar--list'>
-              <li>Halfdan Kjerulfsgate 4</li>
-              <li>5017 Bergen</li>
-              <li>
-                <Link to='tel:+47 994 00 900'>+47 994 00 900</Link>
-              </li>
-              <li>
-                <a to='https://www.linkedin.com/company/instad/'>
-                  <img
-                    height='12px'
-                    width='12px'
-                    src='https://www.datocms-assets.com/41475/1614253597-linkedin.svg'
-                  />
-                </a>
-                <a>
-                  <img
-                    height='12px'
-                    width='12px'
-                    src='https://www.datocms-assets.com/41475/1614258598-icon-awesome-facebook.png'
-                  />
-                </a>
-                <a>
-                  <img
-                    height='12px'
-                    width='12px'
-                    src='https://www.datocms-assets.com/41475/1614258922-instagram.png'
-                  />
-                </a>
-              </li>
-            </ul>
+              <ul className='firstSection__sidebar--list'>
+                <li>Halfdan Kjerulfsgate 4</li>
+                <li>5017 Bergen</li>
+                <li>
+                  <Link to='tel:+47 994 00 900'>+47 994 00 900</Link>
+                </li>
+                <li>
+                  <a to='https://www.linkedin.com/company/instad/'>
+                    <img
+                      height='12px'
+                      width='12px'
+                      src='https://www.datocms-assets.com/41475/1614253597-linkedin.svg'
+                    />
+                  </a>
+                  <a>
+                    <img
+                      height='12px'
+                      width='12px'
+                      src='https://www.datocms-assets.com/41475/1614258598-icon-awesome-facebook.png'
+                    />
+                  </a>
+                  <a>
+                    <img
+                      height='12px'
+                      width='12px'
+                      src='https://www.datocms-assets.com/41475/1614258922-instagram.png'
+                    />
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
-        </div>
+        </Hidden>
         <span className='layout__container--content'>
           <BackgroundImage fluid={props.backgroundImage.edges[0].node.fluid}>
-            <Menu color='#fff' />
+            <Hidden mdDown>
+              <Menu color='#fff' />
+            </Hidden>
+
             <main className='main_container'>
               {props.children} <Footer />
             </main>

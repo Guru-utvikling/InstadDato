@@ -16,7 +16,7 @@ const IndexPage = ({ data }) => (
     <BoxesSection boxData={data.allDatoCmsServiceBox} />
     <div>
       <h2
-        style={{ padding: " 0 7rem", scolor: "#fff" }}
+        style={{ padding: " 0 7rem", color: "#fff" }}
         className='bigSectionTitle bigSectionTitle__left'
       >
         Se de siste innleggene

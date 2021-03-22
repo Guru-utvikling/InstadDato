@@ -6,7 +6,7 @@ const Tjenester = ({ data }) => {
   return (
     <LeftPanelLayout backgroundImage={data.bg}>
       <div className='tjenester__container'>
-        <div className='tjenester__content' style={{ padding: "5rem" }}>
+        <div className='tjenester__content' >
           <h6 className='smallSectionSubTitle'>VARE TJENESTER</h6>
           <h2 style={{ color: "#fff" }} className='bigSectionTitle'>
             Bygg, Anlegg, Installasjon og Industri

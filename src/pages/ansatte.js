@@ -11,7 +11,7 @@ const Ansatte = ({ data }) => {
           {data.allDatoCmsAnsatte.edges.map(({ node: ansatte }) => {
             return (
               <div className='ansatte__content--wrapper'>
-                <Img fixed={ansatte.ansatteimage.fixed} />
+                <Img className="ansatte__image" fixed={ansatte.ansatteimage.fixed} />
                 <h3>{ansatte.ansattename}</h3>
                 <p style={{ color: "$main", marginTop: "1rem" }}>
                   <span>E-post: </span>

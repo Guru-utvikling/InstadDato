@@ -69,7 +69,8 @@ const LeftPanelLayout = (props) => {
             </Hidden>
 
             <main className='main_container'>
-              {props.children} <Footer />
+              {props.children} 
+              <Footer/>
             </main>
           </BackgroundImage>
         </span>

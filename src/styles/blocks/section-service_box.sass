@@ -17,16 +17,21 @@
   width: 20%
 @media screen and (min-width: 899px) and (max-width: 1280px)
   .service_box_container
-    flex-direction: row-reverse
+    flex-direction: row
     justify-content: center
-
   .service_box_wrapper
     width: 40%
   .service_box_main_container
     padding: 3rem
 @media screen and (max-width: 899px)
   .service_box_container
-    flex-direction: row-reverse
+    flex-direction: column
+    padding: 3rem
+  .secondSection__content__container
+    flex-direction: column
+  .service_box_main_container
+    flex-direction: row-reverse !important
+
   .service_box_wrapper
     width: auto
   .service_box_main_container

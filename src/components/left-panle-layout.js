@@ -15,7 +15,7 @@ const LeftPanelLayout = (props) => {
         <Hidden mdUp>
           <MobileMenu/>
         </Hidden>
-        <Hidden mdDown>
+        <Hidden smDown>
           <div className='layout__container--panel'>
             <div className='firstSection__sidebar'>
               <div style={{ textAlign: "center" }}>
@@ -63,7 +63,7 @@ const LeftPanelLayout = (props) => {
         </Hidden>
         <span className='layout__container--content'>
           <BackgroundImage  className="main-background" fluid={props.backgroundImage.edges[0].node.fluid}>
-            <Hidden mdDown>
+            <Hidden smDown>
               <Menu color='#fff' />
             </Hidden>
 

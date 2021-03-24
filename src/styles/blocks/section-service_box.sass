@@ -4,6 +4,7 @@
 .service_box_container
   padding: 2rem
   gap: 2rem
+
 .service_box_wrapper
   width: 15%
   padding: 2rem
@@ -16,17 +17,16 @@
   width: 20%
 @media screen and (min-width: 899px) and (max-width: 1280px)
   .service_box_container
-    flex-direction: row
+    flex-direction: row-reverse
     justify-content: center
-  .service_box_main_container
-    flex-direction: row-reverse !important
+
   .service_box_wrapper
     width: 40%
   .service_box_main_container
     padding: 3rem
 @media screen and (max-width: 899px)
-  .service_box_main_container
-    flex-direction: row-reverse !important
+  .service_box_container
+    flex-direction: row-reverse
   .service_box_wrapper
     width: auto
   .service_box_main_container

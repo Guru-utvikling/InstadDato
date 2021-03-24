@@ -4,7 +4,7 @@ const SecondSection = () => {
   return (
     <Grid className='secondSection__container' container>
       <Grid className='secondSection__content__container' lg={6} item>
-        <h6 className='smallSectionSubTitle'>VARE TJENESTER</h6>
+        <h6 className='smallSectionSubTitle'>VÅRE TJENESTER</h6>
         <h2 style={{ color: "#fff" }} className='bigSectionTitle'>
           Bygg, Anlegg, Installasjon og Industri
         </h2>

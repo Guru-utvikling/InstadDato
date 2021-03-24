@@ -22,14 +22,14 @@ const KontaktOss = ({ data }) => {
               <a to='tel:+47 994 00 900'>+47 994 00 900</a>
             </li>
             <li>
-              <a to='https://www.linkedin.com/company/instad/'>
+              <a href='https://www.linkedin.com/company/instad/'>
                 <img
                   height='35px'
                   width='35px'
                   src='https://www.datocms-assets.com/41475/1614253597-linkedin.svg'
                 />
               </a>
-              <a>
+              <a href='https://www.facebook.com/instad.no/' >
                 <img
                   height='35px'
                   width='35px'

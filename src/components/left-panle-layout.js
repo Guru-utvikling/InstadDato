@@ -3,7 +3,6 @@
 import React from "react"
 import { Link } from "gatsby"
 import "../styles/index.sass"
-import LinkedInIcon from "../assets/LinkedIn.svg"
 import BackgroundImage from "gatsby-background-image"
 import Menu from "../components/Menu/Menu"
 import Footer from "../components/Footer/Footer"
@@ -36,21 +35,21 @@ const LeftPanelLayout = (props) => {
                   <Link to='tel:+47 994 00 900'>+47 994 00 900</Link>
                 </li>
                 <li>
-                  <a to='https://www.linkedin.com/company/instad/'>
+                  <a href='https://www.linkedin.com/company/instad'>
                     <img
                       height='12px'
                       width='12px'
                       src='https://www.datocms-assets.com/41475/1614253597-linkedin.svg'
                     />
                   </a>
-                  <a>
+                  <a href="https://www.facebook.com/instad.no/" >
                     <img
                       height='12px'
                       width='12px'
                       src='https://www.datocms-assets.com/41475/1614258598-icon-awesome-facebook.png'
                     />
                   </a>
-                  <a>
+                  <a >
                     <img
                       height='12px'
                       width='12px'
@@ -63,7 +62,7 @@ const LeftPanelLayout = (props) => {
           </div>
         </Hidden>
         <span className='layout__container--content'>
-          <BackgroundImage fluid={props.backgroundImage.edges[0].node.fluid}>
+          <BackgroundImage  className="main-background" fluid={props.backgroundImage.edges[0].node.fluid}>
             <Hidden mdDown>
               <Menu color='#fff' />
             </Hidden>

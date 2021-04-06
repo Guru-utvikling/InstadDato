@@ -76,7 +76,7 @@ const BoxesSection = (props) => {
           <img
             height={40}
             className='service_box_icon'
-            src='https://www.datocms-assets.com/41475/1615890722-computer-icon-23847521920-transparent.png'
+            src='https://www.datocms-assets.com/41475/1617695905-path-1.png'
           />
           <h2>Kundens suksess</h2>
           <p>

@@ -37,7 +37,6 @@ const BoxesSection = (props) => {
       >
         <div className='service_box_wrapper'>
           <img
-            height={70}
             className='service_box_icon'
             src='https://www.datocms-assets.com/41475/1612271557-tree-3052401280.png'
           />
@@ -49,7 +48,6 @@ const BoxesSection = (props) => {
         </div>
         <div className='service_box_wrapper'>
           <img
-            height={70}
             className='service_box_icon'
             src='https://www.datocms-assets.com/41475/1612271575-pnghutsafety-workplace-helmet-symbol.png'
           />
@@ -62,7 +60,6 @@ const BoxesSection = (props) => {
         </div>
         <div className='service_box_wrapper'>
           <img
-            height={70}
             className='service_box_icon'
             src='https://www.datocms-assets.com/41475/1614258140-picture-1wpng.png'
           />
@@ -74,7 +71,7 @@ const BoxesSection = (props) => {
         </div>
         <div className='service_box_wrapper'>
           <img
-            height={70}
+
             className='service_box_icon'
             src='https://www.datocms-assets.com/41475/1617695905-path-1.png'
           />

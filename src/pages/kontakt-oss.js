@@ -48,7 +48,7 @@ const KontaktOss = ({ data }) => {
           </li>
         </ul>
 
-        <Grid className='kontakt-oss__form__container'>
+        <Grid item xs={12} className='kontakt-oss__form__container'>
           <form
             className='kontakt-oss__form--wrapper'
             method='POST'
@@ -57,46 +57,46 @@ const KontaktOss = ({ data }) => {
             name='Kontakt oss Form'
           >
             <div>
-              <TextField
-                required
-                id='epost-required'
-                label='E-post'
-                type='email'
-                name='email'
-                id='email'
-                required
-              />
-              <TextField
-                required
-                id='phone-required'
-                label='Mobilnummer'
-                type='tel'
-                name='phone'
-                id='phone'
-                required
-              />
-              <TextField
-                required
-                id='navn-required'
-                label='Fullt navn'
-                type='text'
-                name='name'
-                id='name'
-                required
-              />
-              <TextField
-                required
-                id='navn-required'
-                label='Hva kan vi hjelpe deg med?'
-                type='text'
-                name='message'
-                id='message'
-                required
-                rows={4}
-              />
+              <div className='form__info--container'>
+                <input
+                  required
+                  id='navn-required'
+                  placeholder='NAVN'
+                  type='text'
+                  name='name'
+                  id='name'
+                />
+                <input
+                  id='telefon-required'
+                  placeholder='TELEFON'
+                  type='number'
+                  name='tel'
+                  id='tel'
+                />
+              </div>
+              <div className='form__melding--container'>
+                <input
+                  id='email-required'
+                  placeholder='E-POST'
+                  type='email'
+                  name='email'
+                  id='email'
+                />
+            
+                <textarea
+                  required
+                  id='navn-required'
+                  placeholder='MELDING'
+                  type='text'
+                  style={{ fontFamily:'inherit', height:'100px', MaxWidth:'100%'}}
+                  name='message'
+                  id='message'
+                  multiple
+                ></textarea>
+              </div>
             </div>
             <button className='submit-btn-form' type='submit'>
-              Kontakt oss
+              SEND INN
             </button>
           </form>
         </Grid>

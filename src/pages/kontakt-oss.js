@@ -53,7 +53,7 @@ const KontaktOss = ({ data }) => {
             className='kontakt-oss__form--wrapper'
             method='POST'
             data-netlify='true'
-            action='/thank-you'
+            action="/thank-you"
             name='Kontakt oss Form'
           >
             <div>

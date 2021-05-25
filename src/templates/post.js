@@ -2,10 +2,11 @@ import React from 'react'
 import { HelmetDatoCms } from 'gatsby-source-datocms'
 import Img from 'gatsby-image'
 import { graphql } from 'gatsby'
-import Layout from "../components/layout"
+import LeftPanelLayout from "../components/left-panle-layout"
 
 export default ({ data }) => (
-  <Layout>
+  <LeftPanelLayout backgroundImage="https://www.datocms-assets.com/41475/1617702815-first-section-bg.png">
+
     <article className="sheet">
       <HelmetDatoCms seo={data.datoCmsNyheter.seoMetaTags} />
       <div className="sheet__inner">
@@ -23,11 +24,12 @@ export default ({ data }) => (
         </div>
       </div>
     </article>
-  </Layout>
+  </LeftPanelLayout>
 )
-
 export const query = graphql`
   query NyheterQuery( $slug: String! ) {
+
+
     datoCmsNyheter( nyheterSlug: {eq: $slug}) {
       nyheterTitle
       nyheterExcerpt
@@ -36,6 +38,7 @@ export const query = graphql`
             html
           }
         }
+      
         nyheterCoverimage {
           fluid {
             ...GatsbyDatoCmsFluid

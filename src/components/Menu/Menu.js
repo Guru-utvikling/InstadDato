@@ -18,6 +18,7 @@ const NavMenu = (props) => {
   return (
     <List
       style={{
+        zIndex:9999,
         width:"98%",
         position: `${props.position}`,
         flexDirection: `${props.direction}`,

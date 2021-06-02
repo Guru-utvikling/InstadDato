@@ -5,7 +5,7 @@ import { graphql } from 'gatsby'
 import LeftPanelLayout from "../components/left-panle-layout"
 
 export default ({ data }) => (
-  <LeftPanelLayout backgroundImage="https://www.datocms-assets.com/41475/1617702815-first-section-bg.png">
+  <>
 
     <article className="sheet">
       <HelmetDatoCms seo={data.datoCmsNyheter.seoMetaTags} />
@@ -24,7 +24,7 @@ export default ({ data }) => (
         </div>
       </div>
     </article>
-  </LeftPanelLayout>
+  </>
 )
 export const query = graphql`
   query NyheterQuery( $slug: String! ) {

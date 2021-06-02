@@ -5,11 +5,11 @@ import { graphql } from "gatsby"
 import ArticlePreview from "../components/ArticlesPreview/ArticlesPreview"
 export default function PostArchive({ data }) {
   return (
-    <>
+    <LeftPanelLayout backgroundImage={data.allDatoCmsAsset}>
       
       <h1 style={{padding:'0 7rem'}} className="bigSectionTitle">Blogg</h1>
       <ArticlePreview post={data.allDatoCmsNyheter} />
-    </>
+    </LeftPanelLayout>
   )
 }
 

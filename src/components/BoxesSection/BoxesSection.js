@@ -25,7 +25,7 @@ const BoxesSection = (props) => {
           vår. Vi skal være det foretrukne bemanningsselskapet på Vestlandet.
         </p>
       </Grid>
-      <Grid
+      <div
         className='service_box_container'
         container
         direction='reverse-row'
@@ -89,7 +89,7 @@ const BoxesSection = (props) => {
             <p>{service_box.shortDescription}</p>
           </div>
         ))*/}
-      </Grid>
+      </div>
     </Grid>
   )
 }

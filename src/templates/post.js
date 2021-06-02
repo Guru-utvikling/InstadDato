@@ -5,7 +5,7 @@ import { graphql } from 'gatsby'
 import LeftPanelLayout from "../components/left-panle-layout"
 
 export default ({ data }) => (
-  <>
+  <LeftPanelLayout backgroundImage={data.allDatoCmsAsset}>
 
     <article className="sheet">
       <HelmetDatoCms seo={data.datoCmsNyheter.seoMetaTags} />
@@ -24,12 +24,20 @@ export default ({ data }) => (
         </div>
       </div>
     </article>
-  </>
+  </LeftPanelLayout>
 )
 export const query = graphql`
   query NyheterQuery( $slug: String! ) {
 
-
+    allDatoCmsAsset(filter: { filename: { eq: "first-section-bg.png" } }) {
+      edges {
+        node {
+          fluid {
+            ...GatsbyDatoCmsFluid
+          }
+        }
+      }
+    }
     datoCmsNyheter( nyheterSlug: {eq: $slug}) {
       nyheterTitle
       nyheterExcerpt

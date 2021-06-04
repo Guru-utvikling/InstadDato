@@ -7,13 +7,20 @@ import BackgroundImage from "gatsby-background-image"
 import Menu from "../components/Menu/Menu"
 import Footer from "../components/Footer/Footer"
 import Hidden from "@material-ui/core/Hidden"
-import MobileMenu from '../components/Menu/MobileMenu'
+import MobileMenu from "../components/Menu/MobileMenu"
+import MobileMenuList from "../components/Menu/MobileMenuList"
 const LeftPanelLayout = (props) => {
+  const [openMenu, setOpen] = React.useState(false)
+
+  const handleDrawerOpen = () => {
+    setOpen(!openMenu)
+  }
+
   return (
     <>
       <div className='layout__container'>
         <Hidden mdUp>
-          <MobileMenu/>
+          <MobileMenu openMenuHandler={handleDrawerOpen} />
         </Hidden>
         <Hidden smDown>
           <div className='layout__container--panel'>
@@ -42,14 +49,14 @@ const LeftPanelLayout = (props) => {
                       src='https://www.datocms-assets.com/41475/1614253597-linkedin.svg'
                     />
                   </a>
-                  <a href="https://www.facebook.com/instad.no/" >
+                  <a href='https://www.facebook.com/instad.no/'>
                     <img
                       height='12px'
                       width='12px'
                       src='https://www.datocms-assets.com/41475/1614258598-icon-awesome-facebook.png'
                     />
                   </a>
-                  <a >
+                  <a>
                     <img
                       height='12px'
                       width='12px'
@@ -62,14 +69,21 @@ const LeftPanelLayout = (props) => {
           </div>
         </Hidden>
         <span className='layout__container--content'>
-          <BackgroundImage  className="main-background" fluid={props.backgroundImage.edges[0].node.fluid}>
+          <BackgroundImage
+            className='main-background'
+            fluid={props.backgroundImage.edges[0].node.fluid}
+          >
             <Hidden smDown>
               <Menu color='#fff' />
             </Hidden>
 
             <main className='main_container'>
-              {props.children} 
-              <Footer/>
+              <Hidden mdUp>
+                {openMenu ? <MobileMenuList className="mobile-menu-list"/> : null}
+              </Hidden>
+
+              {props.children}
+              <Footer />
             </main>
           </BackgroundImage>
         </span>

@@ -27,11 +27,16 @@ const OmOss = ({ data }) => {
         <Grid lg={6} container item className='om-oss-container__images'>
           <Image
             className='om-oss-container__images--img'
-            fluid={data.first.edges[0].node.fluid}
+            fluid={
+              data.allDatoCmsContent.edges[0].node.omOssSubpageFirstImage.fluid
+            }
           />
           <Image
             className='om-oss-container__images--img'
-            fluid={data.second.edges[0].node.fluid}
+            fluid={
+              data.allDatoCmsContent.edges[0].node.omOssSubpageSecondImage.fluid
+                
+            }
           />
         </Grid>
       </div>
@@ -43,25 +48,24 @@ export default OmOss
 
 export const query = graphql`
   query omOssQuery {
+    allDatoCmsContent {
+      edges {
+        node {
+          omOssSubpageParagraph
+          omOssSubpageFirstImage {
+            fluid {
+              ...GatsbyDatoCmsFluid
+            }
+          }
+          omOssSubpageSecondImage {
+            fluid {
+              ...GatsbyDatoCmsFluid
+            }
+          }
+        }
+      }
+    }
     bg: allDatoCmsAsset(filter: { filename: { eq: "first-section-bg.png" } }) {
-      edges {
-        node {
-          fluid {
-            ...GatsbyDatoCmsFluid
-          }
-        }
-      }
-    }
-    first: allDatoCmsAsset(filter: { filename: { eq: "om-ossimage.jpg" } }) {
-      edges {
-        node {
-          fluid {
-            ...GatsbyDatoCmsFluid
-          }
-        }
-      }
-    }
-    second: allDatoCmsAsset(filter: { filename: { eq: "arbeider1.jpg" } }) {
       edges {
         node {
           fluid {

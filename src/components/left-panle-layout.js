@@ -9,6 +9,8 @@ import Footer from "../components/Footer/Footer"
 import Hidden from "@material-ui/core/Hidden"
 import MobileMenu from "../components/Menu/MobileMenu"
 import MobileMenuList from "../components/Menu/MobileMenuList"
+import { TransitionGroup } from "react-transition-group"
+
 const LeftPanelLayout = (props) => {
   const [openMenu, setOpen] = React.useState(false)
 
@@ -79,7 +81,9 @@ const LeftPanelLayout = (props) => {
 
             <main className='main_container'>
               <Hidden mdUp>
-                {openMenu ? <MobileMenuList className="mobile-menu-list"/> : null}
+                  {openMenu ? (
+                    <MobileMenuList className='mobile-menu-list' />
+                  ) : null}
               </Hidden>
 
               {props.children}

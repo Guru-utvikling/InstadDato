@@ -11,9 +11,9 @@ import LeftPanelLayout from "../components/left-panle-layout"
 
 const IndexPage = ({ data }) => (
   <LeftPanelLayout backgroundImage={data.allDatoCmsAsset}>
-    <MainSection />
-    <SecondSection />
-    <BoxesSection boxData={data.allDatoCmsServiceBox} />
+    <MainSection content={data.allDatoCmsContent} />
+    <SecondSection content={data.allDatoCmsContent} />
+    <BoxesSection  content={data.allDatoCmsContent} boxData={data.allDatoCmsServiceBox} />
     <div>
       <h2
         style={{ padding: " 0 7rem", color: "#fff" }}
@@ -36,6 +36,29 @@ export default IndexPage
 
 export const query = graphql`
   query queryIndexPage {
+    allDatoCmsContent {
+      edges{
+        node{
+          firstParagraph
+          secondParagraph
+          vareTjenesterSmallHeading
+          vareTjenesterBigHeading
+          vareTjenesterParagraph
+          vareTjenesterFirstImage {
+            fluid {
+              src
+            }
+          }
+          vareTjenesterSecondImage {
+            fluid {
+              src
+            }
+          }
+          omOssHeading
+          omOssParagraph
+        }
+      }
+    }
     allDatoCmsNyheter(limit: 3) {
       edges {
         node {

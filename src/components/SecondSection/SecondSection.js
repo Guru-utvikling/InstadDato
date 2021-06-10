@@ -1,20 +1,18 @@
 import React from "react"
 import Grid from "@material-ui/core/Grid"
-const SecondSection = () => {
+import Image from 'gatsby-image'
+const SecondSection = (props) => {
   return (
     <Grid className='secondSection__container' container>
       <Grid className='secondSection__content__container' lg={6} item>
-        <h6 className='smallSectionSubTitle'>VÅRE TJENESTER</h6>
+        <h6 className='smallSectionSubTitle'>
+          {props.content.edges[0].node.vareTjenesterSmallHeading}
+        </h6>
         <h2 style={{ color: "#fff" }} className='bigSectionTitle'>
-          Bygg, Anlegg, Installasjon og Industri
+          {props.content.edges[0].node.vareTjenesterBigHeading}
         </h2>
         <p style={{ color: "#fff" }} className='paraSection'>
-          Vi kjenner markedet og mulighetene innen fagene. Vi samarbeider med
-          mange både små og store kunder, både lokalt og nasjonalt. Vi har et
-          bredt spekter av kandidater og ledige stillinger innenfor de
-          forskjellige yrkesområdene. Vi har bransjefolk med lang erfaring og
-          våre medarbeidere innehar høy kompetanse. Det viktigste for oss er
-          våre medarbeidere.
+          {props.content.edges[0].node.vareTjenesterParagraph}
         </p>
       </Grid>
       <Grid
@@ -33,7 +31,7 @@ const SecondSection = () => {
           <img
             height={227}
             alt='excavator on site'
-            src='https://www.datocms-assets.com/41475/1613570699-construction-site.jpg'
+            src={props.content.edges[0].node.vareTjenesterFirstImage.fluid.src}
           />
         </Grid>
         <Grid
@@ -45,7 +43,7 @@ const SecondSection = () => {
           <img
             height={227}
             alt='workers working'
-            src='https://www.datocms-assets.com/41475/1613642190-om-oss-image-1.jpg'
+            src={props.content.edges[0].node.vareTjenesterSecondImage.fluid.src}
           />
         </Grid>
       </Grid>

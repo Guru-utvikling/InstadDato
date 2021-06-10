@@ -27,17 +27,10 @@ const MainSection = (props) => {
           <Slide in direction='right' timeout={300}>
             <div className='mainSection__content--wrapper'>
               <p className='mainSection__para'>
-                Instad AS is a staffing and recruitment company established in
-                December 2019 and headquartered in the center of Bergen, Norway.
-                We provide experienced industry professionals for a wide variety
-                of commercial and private projects.
+                {props.content.edges[0].node.firstParagraph}
               </p>
               <p className='mainSection__para'>
-                We are a staffing company that is specialized in the areas of
-                building and industrial construction and installation. The
-                company invests in the best and latest innovative technological
-                solutions available on the market to make things easier and less
-                complicated, for both our employees and customers.
+                {props.content.edges[0].node.secondParagraph}
               </p>
               <div>
                 <a

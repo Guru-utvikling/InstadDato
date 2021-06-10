@@ -14,15 +14,10 @@ const BoxesSection = (props) => {
         container
       >
         <h2 className='bigSectionTitle' style={{ color: "#fff" }}>
-          Om Instad AS
+          {props.content.edges[0].node.omOssHeading}
         </h2>
         <p className='paraSection' style={{ color: "#fff" }}>
-          Instad AS ble startet i desember 2019, av Bjarne Jakobsen og Trond
-          Erik Stølås. Begge har lang erfaring i bransjen, og målet er å gjøre
-          ting enkelt. Enkelt for kunde og samarbeidspartnere, og enkelt for
-          våre kandidater/medarbeidere med å bruke det nyeste av teknologiske
-          løsninger. Samtidig ønsker vi å skape en lokal forankring i bedriften
-          vår. Vi skal være det foretrukne bemanningsselskapet på Vestlandet.
+          {props.content.edges[0].node.omOssParagraph}
         </p>
       </Grid>
       <div
@@ -71,7 +66,6 @@ const BoxesSection = (props) => {
         </div>
         <div className='service_box_wrapper'>
           <img
-
             className='service_box_icon'
             src='https://www.datocms-assets.com/41475/1617695905-path-1.png'
           />

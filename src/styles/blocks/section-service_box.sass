@@ -1,13 +1,15 @@
 .service_box_main_container
   gap: 2rem
   padding: 5rem
+  display: flex
+  flex-wrap: wrap
 .service_box_container
   display: flex
   padding: 2rem
+  flex-wrap: wrap
 
 .service_box_wrapper
-  flex: 1 0 auto
-  width: 10%
+  max-width: 220px
   padding: 2rem
   margin: 1rem
   text-align: center
@@ -16,34 +18,23 @@
     font-size: 1.4rem
     font-weight: 900
 .service_box_icon
-  width: 35%
-  height: 70px
-@media screen and (min-width: 899px) and (max-width: 1280px)
-  .service_box_container
-    flex-direction: row
-    justify-content: center
-  .service_box_wrapper
-    width: 25%
-  .service_box_main_container
-    padding: 3rem
-  .service_box_icon
-    height: 60px
-@media screen and (max-width: 899px)
-  .service_box_icon
-    width: 40%
-    height: 60px
-  .service_box_container
-    flex-direction: column
-    padding: 20%
-  .secondSection__content__container
-    flex-direction: column
-  .service_box_main_container
-    flex-direction: row-reverse !important
+  max-width: 60px
+  height: 60px
 
-  .service_box_wrapper
-    width: auto
+@media screen and (min-width: 899px) and (max-width: 1280px)
+  .service_box_main_container
+    padding: 2rem
+@media screen and (max-width: 899px)
   .service_box_main_container
     padding: 0
-@media screen and  (min-width: 1281px)
+  .service_box_container
+    justify-content: center
+    padding: 0
   .service_box_wrapper
-    width: 15%
+    max-width: 220px
+
+@media screen and  (min-width: 1281px)
+  .service_box_main_container
+    padding: 5rem
+  .service_box_container
+    padding: 1rem

@@ -3,10 +3,11 @@ import Grid from "@material-ui/core/Grid"
 
 const BoxesSection = (props) => {
   return (
-    <Grid className='service_box_main_container' container>
+    <Grid className='service_box_main_container' direction="column" container>
       <Grid
         className='secondSection__content__container'
         justify='center'
+        direction="column"
         lg={6}
         xs={12}
         md={12}
@@ -23,19 +24,41 @@ const BoxesSection = (props) => {
       <div
         className='service_box_container'
         container
-        direction='reverse-row'
+        
         justify='flex-start'
         lg={12}
         xs={12}
         md={12}
         item
       >
-        <div className='service_box_wrapper'>
+        {props.boxData.edges.map(({ node: service_box }) => (
+          <div key={service_box.id} className='service_box_wrapper'>
+            <img
+              height={40}
+              alt={service_box.icon.alt}
+              className='service_box_icon'
+              src={service_box.icon.url}
+            />
+            <h2>{service_box.title}</h2>
+            <p>{service_box.shortDescription}</p>
+          </div>
+        ))}
+      </div>
+    </Grid>
+  )
+}
+
+export default BoxesSection
+
+{
+  /*
+       
+              <div className='service_box_wrapper'>
           <img
             className='service_box_icon'
             src='https://www.datocms-assets.com/41475/1612271557-tree-3052401280.png'
           />
-          <h2>Jordnær</h2>
+          <h2>{props.boxData.edges[0].node.title}Jordnær</h2>
           <p>
             Vi ønsker langvarige relasjoner basert på en ukomplisert, ydmyk og
             troverdig tilnærming
@@ -76,16 +99,5 @@ const BoxesSection = (props) => {
             egen suksess.
           </p>
         </div>
-        {/*props.boxData.edges.map(({ node: service_box }) => (
-          <div key={service_box.id} className='service_box_wrapper'>
-            <img height={40} alt={service_box.icon.alt} className="service_box_icon" src={service_box.icon.url} />
-            <h2>{service_box.title}</h2>
-            <p>{service_box.shortDescription}</p>
-          </div>
-        ))*/}
-      </div>
-    </Grid>
-  )
+       */
 }
-
-export default BoxesSection

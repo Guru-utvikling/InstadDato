@@ -13,7 +13,10 @@ const IndexPage = ({ data }) => (
   <LeftPanelLayout backgroundImage={data.allDatoCmsAsset}>
     <MainSection content={data.allDatoCmsContent} />
     <SecondSection content={data.allDatoCmsContent} />
-    <BoxesSection  content={data.allDatoCmsContent} boxData={data.allDatoCmsServiceBox} />
+    <BoxesSection
+      content={data.allDatoCmsContent}
+      boxData={data.allDatoCmsServiceBox}
+    />
     <div>
       <h2
         style={{ padding: " 0 7rem", color: "#fff" }}
@@ -37,8 +40,8 @@ export default IndexPage
 export const query = graphql`
   query queryIndexPage {
     allDatoCmsContent {
-      edges{
-        node{
+      edges {
+        node {
           firstParagraph
           secondParagraph
           vareTjenesterSmallHeading
@@ -76,15 +79,15 @@ export const query = graphql`
         }
       }
     }
-    allDatoCmsServiceBox {
+    allDatoCmsServiceBox(sort: { order: ASC, fields: order }) {
       edges {
         node {
+          order
           id
           shortDescription
           title
           icon {
             url
-            alt
           }
         }
       }
